@@ -1,7 +1,5 @@
 package functional;
 
-import sun.reflect.generics.tree.Tree;
-
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -21,6 +19,8 @@ public class CollectingResults {
         cr.collectWithGroupBy();
         cr.collectToAMap();
         cr.mostUsedWord();
+        cr.collectUsingPartitioningBy();
+        cr.collectUsingOtherCollectors();
     }
 
     private void collectToListNSet() {
@@ -42,15 +42,15 @@ public class CollectingResults {
         // Mapping name size to names list
         // Grouping using a List
         Map<Integer, List<String>> nameLengthToNameMap = sNames.collect(Collectors.groupingBy(String::length));
-        System.out.println("nameLengthToNameMap: " + nameLengthToNameMap);
+        System.out.println("Collecting using gropingBy nameLengthToNameMap: " + nameLengthToNameMap);
         // Grouping using a set
         Stream<String> sNames2 = Stream.of(names);
         Map<Integer, Set<String>> nameLengthToNameSetMap = sNames2.collect(Collectors.groupingBy(String::length, Collectors.toSet()));
-        System.out.println("nameLengthToNameSetMap: " + nameLengthToNameSetMap);
+        System.out.println("Collecting using gropingBy grouping in a set nameLengthToNameSetMap: " + nameLengthToNameSetMap);
         // Grouping using a TreeSet into a TreeMap. Result should be sorted
         Stream<String> sNames3 = Stream.of(names);
         Map<Integer, Set<String>> nameLengthToNameSortedSetTreeMap = sNames3.collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.toCollection(TreeSet::new)));
-        System.out.println("nameLengthToNameSortedSetTreeMap, Names should be sorted:  " + nameLengthToNameSortedSetTreeMap);
+        System.out.println("Collecting using gropingBy into a TreeMap grouping in a TreeSet nameLengthToNameSortedSetTreeMap, Names should be sorted:  " + nameLengthToNameSortedSetTreeMap);
         System.out.println("---------------------------------------------------");
     }
 
@@ -58,16 +58,60 @@ public class CollectingResults {
         Stream<String> sNames = Stream.of(names);
         // Name - length name map
         Map<String, Integer> nameToLengthMap = sNames.distinct().collect(Collectors.toMap(s -> s, String::length));
-        System.out.println("nameToLengthMap: " + nameToLengthMap);
+        System.out.println("Collecting into a map nameToLengthMap: " + nameToLengthMap);
         Stream<String> sNames2 = Stream.of(names);
         TreeMap<String, Integer> sortedNameToLengthMap = sNames2
             .distinct()
             .collect(Collectors.toMap(s -> s, String::length, (i, i2) -> i, TreeMap::new));
-        System.out.println("sortedNameToLengthMap: " + sortedNameToLengthMap);
+        System.out.println("Collecting into a TreeMap sortedNameToLengthMap: " + sortedNameToLengthMap);
         System.out.println("---------------------------------------------------");
 
     }
 
+    private void collectUsingPartitioningBy() {
+        Stream<String> sNames = Stream.of(names);
+        Map<Boolean, List<String>> nameSizeGreaterThan5Map = sNames
+            .collect(Collectors.partitioningBy((String s) -> s.length() > 5));
+        System.out.println("Collecting using partitioningBy (not repeated names) nameSizeGreaterThan5Map: " + nameSizeGreaterThan5Map);
+
+        Stream<String> sName2 = Stream.of(names);
+        Map<Boolean, Set<String>> nameSizeGreaterThan5Map2 = sName2
+            .collect(Collectors.partitioningBy((String s) -> s.length() > 5 , Collectors.toSet()));
+        System.out.println("Collecting using partitioningBy grouping in a set (not repeated names) nameSizeGreaterThan5Map: " + nameSizeGreaterThan5Map2);
+
+
+        Stream<String> sName3 = Stream.of(names);
+        Map<Boolean, TreeSet<String>> nameSizeGreaterThan5Map3 = sName3
+            .collect(Collectors.partitioningBy((String s) -> s.length() > 5 , Collectors.toCollection(TreeSet::new)));
+        System.out.println("Collecting using partitioningBy grouping in a TreeSet (not repeated names, sorted) nameSizeGreaterThan5Map: " + nameSizeGreaterThan5Map3);
+
+        System.out.println("---------------------------------------------------");
+
+    }
+
+    private void collectUsingOtherCollectors(){
+        Stream<String> sNames = Stream.of(names);
+        String joinedString = sNames.collect(Collectors.joining());
+        System.out.println("Collecting using joining: " + joinedString);
+
+        Stream<String> sNames2 = Stream.of(names);
+        String joinedStringCommaSeparated = sNames2.collect(Collectors.joining(","));
+        System.out.println("Collecting using joining separated by , : " + joinedStringCommaSeparated);
+
+        Stream<String> sNames3 = Stream.of(names);
+        Optional<String> minName = sNames3.collect(Collectors.minBy(Comparator.naturalOrder()));
+        System.out.println("Collecting minBy: " + minName.get());
+
+        Stream<String> sNames4 = Stream.of(names);
+        Optional<String> maxLengthName = sNames4.collect(Collectors.maxBy(Comparator.comparingInt(String::length)));
+        System.out.println("Collecting maxBy the longest name: " + maxLengthName.get());
+
+        Stream<String> sNames5 = Stream.of(names);
+        Long namesCount = sNames5.collect(Collectors.counting());
+        System.out.println("Collecting counting namesCount: " + namesCount);
+        System.out.println("---------------------------------------------------");
+
+    }
 
     private void mostUsedWord() {
         Stream<String> sWords = Stream.of(words);
@@ -84,8 +128,5 @@ public class CollectingResults {
             .stream().findFirst()
             .ifPresent(x -> System.out.println("Most repeated word: " + x));
         System.out.println("---------------------------------------------------");
-        Stream<String> s = Stream.of(words);
-
-
     }
 }
