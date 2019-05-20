@@ -1,14 +1,15 @@
 package dates_strings_localization.dates;
 
 import java.time.*;
+import java.time.temporal.UnsupportedTemporalTypeException;
 
 public class DatesNTimes {
 
     public static void main(String[] args) {
         creatingDatesAndTimes();
         manipulatingDAtesAndTimes();
-        workingWithPeriods();
         convertingToLong();
+        workingWithPeriods();
     }
 
     private static void creatingDatesAndTimes() {
@@ -74,11 +75,40 @@ public class DatesNTimes {
         date = date.plusYears(1).plusMonths(2).plusDays(15);
         System.out.println("Chaining methods, plus 1 year 2 months and 15 days: " + date);
         System.out.println("-----------------------------");
-
     }
 
     private static void workingWithPeriods() {
+        //Period is a day or more time
+        Period periodOfDays = Period.ofDays(1);
+        Period periodOfYears = Period.ofYears(1);
+        Period periodOfYearsMonthsAndDays = Period.of(1, 2, 3);
 
+        // Period Format
+        // it is in form P1Y1M1D:
+        // P indicates is a Period
+        // 1Y indicates the number of years
+        // 1M indicates the number of months
+        // 1D indicates the number of days
+        // Java omits any measure that are zero. For example P1D or P1Y or P1Y3D
+        System.out.println(periodOfDays);
+        System.out.println(periodOfYears);
+        System.out.println(periodOfYearsMonthsAndDays);
+
+        // Using a Period
+
+        LocalDate date = LocalDate.now();
+        System.out.println("actual date:" + date);
+        date = date.plus(periodOfYears);
+        System.out.println("plus a period of one year: " + date);
+        date = date.plus(periodOfDays);
+        System.out.println("plus a period of one day: " + date);
+
+        LocalTime time = LocalTime.now();
+        try{
+            time.plus(periodOfDays); //UnsupportedTemporalTypeException
+        } catch (UnsupportedTemporalTypeException e){
+            System.out.println("time.plus(periodOfDays) throws an UnsupportedTemporalTypeException on LocalTime objects");
+        }
 
         System.out.println("-----------------------------");
     }
