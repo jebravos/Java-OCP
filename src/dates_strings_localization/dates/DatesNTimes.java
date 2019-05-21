@@ -1,6 +1,7 @@
 package dates_strings_localization.dates;
 
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.UnsupportedTemporalTypeException;
 
 public class DatesNTimes {
@@ -10,6 +11,8 @@ public class DatesNTimes {
         manipulatingDAtesAndTimes();
         convertingToLong();
         workingWithPeriods();
+        workingWithDuration();
+        workingWithInstants();
     }
 
     private static void creatingDatesAndTimes() {
@@ -77,6 +80,24 @@ public class DatesNTimes {
         System.out.println("-----------------------------");
     }
 
+    private static void convertingToLong() {
+        LocalDate date = LocalDate.now();
+        // Converts the date into a Long equivalent in relation to January 1th 1970. This special date is called the epoch.
+        // That’s the date Unix started using for date standards
+
+        //LocalDate has toEpochDay(), which is the number of days since January 1, 1970
+        System.out.println("LocalDate.now() epoch day, days since January 1, 1970: " + date.toEpochDay());
+
+        LocalDateTime dateTime = LocalDateTime.of(LocalDate.now(), LocalTime.now());
+        ZonedDateTime zonedDateTime = ZonedDateTime.of(LocalDateTime.now(), ZoneId.systemDefault());
+        //LocalDateTime and ZonedDateTime have toEpochSecond(), which is the number of
+        //seconds since January 1, 1970.
+        System.out.println("LocalDateTime.of(LocalDate.now(), LocalTime.now()) epoch day, seconds since January 1, 1970: " + zonedDateTime.toEpochSecond());
+        System.out.println("ZonedDateTime.of(LocalDateTime.now(), ZoneId.systemDefault()) epoch day, seconds since January 1, 1970: " + dateTime.toEpochSecond(ZoneOffset.UTC));
+        System.out.println("-----------------------------");
+
+    }
+
     private static void workingWithPeriods() {
         //Period is a day or more time
         Period periodOfDays = Period.ofDays(1);
@@ -104,29 +125,94 @@ public class DatesNTimes {
         System.out.println("plus a period of one day: " + date);
 
         LocalTime time = LocalTime.now();
-        try{
+        try {
             time.plus(periodOfDays); //UnsupportedTemporalTypeException
-        } catch (UnsupportedTemporalTypeException e){
+        } catch (UnsupportedTemporalTypeException e) {
             System.out.println("time.plus(periodOfDays) throws an UnsupportedTemporalTypeException on LocalTime objects");
         }
 
         System.out.println("-----------------------------");
     }
 
-    private static void convertingToLong() {
-        LocalDate date = LocalDate.now();
-        // Converts the date into a Long equivalent in relation to January 1th 1970. This special date is called the epoch.
-        // That’s the date Unix started using for date standards
+    public static void workingWithDuration() {
+        // Work as Period but it is intended for smaller units of time.
+        // You can specify number of days, hours, minutes, seconds or nanoseconds.
+        // And it is used in objects that have time
 
-        //LocalDate has toEpochDay(), which is the number of days since January 1, 1970
-        System.out.println("LocalDate.now() epoch day, days since January 1, 1970: " + date.toEpochDay());
 
-        LocalDateTime dateTime = LocalDateTime.of(LocalDate.now(), LocalTime.now());
-        ZonedDateTime zonedDateTime = ZonedDateTime.of(LocalDateTime.now(), ZoneId.systemDefault());
-        //LocalDateTime and ZonedDateTime have toEpochSecond(), which is the number of
-        //seconds since January 1, 1970.
-        System.out.println("LocalDateTime.of(LocalDate.now(), LocalTime.now()) epoch day, seconds since January 1, 1970: " + zonedDateTime.toEpochSecond());
-        System.out.println("ZonedDateTime.of(LocalDateTime.now(), ZoneId.systemDefault()) epoch day, seconds since January 1, 1970: " + dateTime.toEpochSecond(ZoneOffset.UTC));
+        // Format PT1H1M1S:
+        // Period of time
+        // Hours
+        // Minutes
+        // Seconds
+        Duration duration = Duration.ofHours(60);
+        Duration hourly = Duration.ofHours(1);
+        Duration everySeconds = Duration.ofSeconds(360);
+        Duration everyNanos = Duration.ofNanos(36000);
+        System.out.println("Duration format ofHours(): " + duration);
+        System.out.println("Duration format: ofSeconds()" + everySeconds);
+        // The number of seconds includes fractional seconds
+        System.out.println("Duration format: ofNanos()" + everyNanos);
+
+        // Create Duration with ChronoUnit
+        Duration everyHours = Duration.of(10, ChronoUnit.HOURS);
+
+        //Using Duration
+
+        LocalTime now = LocalTime.now();
+        System.out.println("now time: " + now);
+        System.out.println("now plus one hour: " + now.plus(hourly));
+
+        LocalDateTime nowDateTime = LocalDateTime.now();
+        System.out.println("now date time: " + nowDateTime);
+        System.out.println("now date time: plus one hour " + nowDateTime.plus(hourly));
+
+        // Duration cannot be used with LocalDate since it doesn't manage hours, minutes or seconds
+        // UnsupportedTemporalException will be thrown
+        try {
+            LocalDate.now().plus(hourly);
+        } catch (UnsupportedTemporalTypeException e) {
+            System.out.println("UnsupportedTemporalException is thrown when Duration is used with LocalDate: Unsupported unit secods ");
+        }
+
+        System.out.println("ChronoUnit for differences:");
+        System.out.println("difference in Hours between " + now + " and " + now.plus(hourly) + ": " + ChronoUnit.HOURS.between(now, now.plus(hourly)));
+        System.out.println("difference in minutes between " + now + " and " + now.plus(hourly) + ": " + ChronoUnit.MINUTES.between(now, now.plus(hourly)));
+        System.out.println("difference in seconds between " + now + " and " + now.plus(hourly) + ": " + ChronoUnit.SECONDS.between(now, now.plus(hourly)));
+        System.out.println("-----------------------------");
+    }
+
+    private static void workingWithInstants() {
+        System.out.println("Working with Instants....");
+        // Instant represents a specific moment in time in the GMT time zone
+        // It could be used to run a Timer
+        Instant now = Instant.now();
+        // ... Something time consuming
+        try {
+            Thread.sleep(Duration.ofSeconds(2).toMillis());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Instant later = Instant.now();
+        System.out.println("Time difference: " + ChronoUnit.MILLIS.between(now, later) + " millis.");
+
+        // We can create an Instant from the number of seconds since 1970
+        Instant fromEpochSeconds = Instant.ofEpochSecond(ZonedDateTime.now().toEpochSecond());
+        System.out.println("Instant from epoch seconds: " + fromEpochSeconds);
+
+        // We can do math using Instant. Instant allows you to add any unit day or smaller
+        Instant nextDay = now.plus(1, ChronoUnit.DAYS);
+        System.out.println("Instant math:");
+        System.out.println("next day " + nextDay);
+        Instant nextMinute = now.plus(1, ChronoUnit.MINUTES);
+        System.out.println("next day " + nextMinute);
+        // Instant displays a Year and Month while preventing you from doing math with them. You need to memorize it.
+        try {
+            now.plus(1, ChronoUnit.MONTHS);  // UnsupportedTemporalTypeException
+        } catch (UnsupportedTemporalTypeException e) {
+            System.out.println("now.plus(1, ChronoUnit.MONTHS) will throw " + e.getClass() + " - " + e.getMessage());
+        }
+
         System.out.println("-----------------------------");
 
     }
