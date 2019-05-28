@@ -79,7 +79,6 @@ public class CollectingResults {
             .collect(Collectors.partitioningBy((String s) -> s.length() > 5 , Collectors.toSet()));
         System.out.println("Collecting using partitioningBy grouping in a set (not repeated names) nameSizeGreaterThan5Map: " + nameSizeGreaterThan5Map2);
 
-
         Stream<String> sName3 = Stream.of(names);
         Map<Boolean, TreeSet<String>> nameSizeGreaterThan5Map3 = sName3
             .collect(Collectors.partitioningBy((String s) -> s.length() > 5 , Collectors.toCollection(TreeSet::new)));
