@@ -1,5 +1,5 @@
 #ignore target
-/target
+target
 
 #ignore IDE config
-/.idea
+.idea
