@@ -31,7 +31,7 @@ public class ClassWithInnersClasses {
         abstract String sayHello();
     }
 
-    // Static inner class does not need an instance of the outer class in order to instantiated
+    // Static inner class does not need an instance of the outer class in order to be instantiated
     static class StaticMemberClass {
         private String hello = "Hello from static inner class";
 
