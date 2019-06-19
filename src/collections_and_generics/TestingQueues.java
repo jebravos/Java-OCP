@@ -30,7 +30,7 @@ public class TestingQueues {
             System.out.println(e.getClass() + " null elements are not allowed in ArrayDeque");
         }
 
-        // E elemenet() returns next element or throw an exception if empty queue
+        // E element() returns next element or throw an exception if empty queue
         // The element returned is not remove from the queue
         System.out.println("element: " + queue.element());
         System.out.println("queue: " + queue);
