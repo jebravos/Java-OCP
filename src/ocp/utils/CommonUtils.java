@@ -6,20 +6,38 @@ import static ocp.utils.StringUtils.stringValueOrNull;
 
 public class CommonUtils {
 
-    public static void printLn(Object o){
-        System.out.println(stringValueOrNull(o));
+    public static void print(Object o){
+        System.out.print(stringValueOrNull(o));
     }
 
-    public static void printLn(String message){
-        System.out.println(message);
-    }
-
-    public static void printLn(String template, Object... args){
+    public static void print(String template, Object... args){
         if(args.length > 0){
             StringBuilder textBuilder = new StringBuilder(template);
             Arrays.stream(args)
                     .forEach(replaceNextWildcardWithNonNullValueOnTemplate(textBuilder));
-            printLn(textBuilder.toString());
+            print(textBuilder.toString());
+        }
+
+    }
+
+    public static void println(){
+        System.out.println();
+    }
+
+    public static void println(Object o){
+        System.out.println(stringValueOrNull(o));
+    }
+
+    public static void println(String message){
+        System.out.println(message);
+    }
+
+    public static void println(String template, Object... args){
+        if(args.length > 0){
+            StringBuilder textBuilder = new StringBuilder(template);
+            Arrays.stream(args)
+                    .forEach(replaceNextWildcardWithNonNullValueOnTemplate(textBuilder));
+            println(textBuilder.toString());
         }
 
     }
@@ -30,8 +48,8 @@ public class CommonUtils {
 
 //
 //    public static void main(String[] args) {
-//        printLn("Hello {} ... {} ... {}", "world", "aze", "123");
-//        printLn("Hello {} ... {} ... {}", "AZE");
-//        printLn("Hello {} ... {} ... {}", null, null, "123");
+//        println("Hello {} ... {} ... {}", "world", "aze", "123");
+//        println("Hello {} ... {} ... {}", "AZE");
+//        println("Hello {} ... {} ... {}", null, null, "123");
 //    }
 }

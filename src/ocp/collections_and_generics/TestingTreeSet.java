@@ -1,11 +1,13 @@
 package ocp.collections_and_generics;
 
+import ocp.utils.CommonUtils;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
 
-import static ocp.utils.CommonUtils.printLn;
+import static ocp.utils.CommonUtils.println;
 
 public class TestingTreeSet {
 
@@ -29,38 +31,38 @@ public class TestingTreeSet {
         treeSet.add(28);
         treeSet.add(4);
 
-        printLn(treeSet);
+        CommonUtils.println(treeSet);
 
         // NavigableSet interface which provides some interesting methods:
         // E lower(E e) Returns greatest element that is < e, or null if no such element
-        printLn("lower: {}", treeSet.lower(50));
+        println("lower: {}", treeSet.lower(50));
         // E floor(E e) Returns greatest element that is <= e, or null if no such element
-        printLn("floor: {}", treeSet.floor(50));
+        println("floor: {}", treeSet.floor(50));
         // E ceiling(E e) Returns smallest element that is >= e, or null if no such element
-        printLn("ceiling: {}", treeSet.ceiling(50));
+        println("ceiling: {}", treeSet.ceiling(50));
         // E higher(E e) Returns smallest element that is > e, or null if no such element
-        printLn("heigher: {}", treeSet.higher(50));
+        println("heigher: {}", treeSet.higher(50));
 
 
         // SortedSet methods
-        printLn("first {}", treeSet.first());
-        printLn("last {}", treeSet.last());
+        println("first {}", treeSet.first());
+        println("last {}", treeSet.last());
 
         // TreeSet cannot contain null values. It will throw a NullPointerException
         try {
             treeSet.add(null);
         } catch (NullPointerException e) {
-            printLn("TreeSet cannot contain null values. It will throw a NullPointerException");
+            CommonUtils.println("TreeSet cannot contain null values. It will throw a NullPointerException");
         }
 
-        printLn("poll first {} treeSet: {}", treeSet.pollFirst(), treeSet);
-        printLn("poll last {} treeSet {} ", treeSet.pollLast(), treeSet);
-        printLn("-------------------------------------------------------------");
+        println("poll first {} treeSet: {}", treeSet.pollFirst(), treeSet);
+        println("poll last {} treeSet {} ", treeSet.pollLast(), treeSet);
+        CommonUtils.println("-------------------------------------------------------------");
 
         // If we use a collection to create a new TreeSet instance, the result set will be sorted according to the natural order of its elements
         List<Integer> numbers = Arrays.asList(3, 2, 5, 1, 3, 8, 7);
         TreeSet<Integer> numberTree = new TreeSet<>(numbers);
-        printLn(numberTree);
+        CommonUtils.println(numberTree);
 
         // Objects in a TreeSet should be comparable. They must implement Comparable or whe can define a comparator in the TreeSet constructor
         // TreeSet<Elephant> elephants = new TreeSet<>(); // This will compile but a ClassCastException is thrown in elephants.add
@@ -69,7 +71,7 @@ public class TestingTreeSet {
         elephants.add(new Elephant("alberto"));
         elephants.add(new Elephant("benito"));
 
-        printLn(elephants);
+        CommonUtils.println(elephants);
 
 
     }

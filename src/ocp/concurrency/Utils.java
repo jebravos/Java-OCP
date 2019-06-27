@@ -6,7 +6,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
-import static ocp.utils.CommonUtils.printLn;
+import static ocp.utils.CommonUtils.println;
 
 class Utils {
 
@@ -49,7 +49,7 @@ class Utils {
     }
 
     private static void printLnWithThreadId(String message){
-        printLn("Thread {} {}",Thread.currentThread().getId(), message);
+        println("Thread {} {}",Thread.currentThread().getId(), message);
     }
 
 

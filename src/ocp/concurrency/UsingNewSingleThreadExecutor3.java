@@ -1,12 +1,14 @@
 package ocp.concurrency;
 
+import ocp.utils.CommonUtils;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.*;
 
 import static ocp.concurrency.ExecutorsUtils.shutdownExecutorAndReport;
-import static ocp.utils.CommonUtils.printLn;
+import static ocp.utils.CommonUtils.println;
 
 public class UsingNewSingleThreadExecutor3 {
 
@@ -55,7 +57,7 @@ public class UsingNewSingleThreadExecutor3 {
             try {
                 // get() will block the execution till it receives a response
                 // since get waits endlessly if is not yet available we prefer to use a get(long timeout, TimeUnit unit)
-                printLn(f.get(1, TimeUnit.SECONDS));
+                CommonUtils.println(f.get(1, TimeUnit.SECONDS));
             } catch (Exception e) {
                 System.err.println(e.getStackTrace());
             }
