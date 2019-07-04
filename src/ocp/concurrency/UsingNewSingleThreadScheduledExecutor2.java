@@ -1,6 +1,6 @@
 package ocp.concurrency;
 
-import ocp.utils.CommonUtils;
+import ocp.utils.PrintUtils;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -22,7 +22,7 @@ public class UsingNewSingleThreadScheduledExecutor2 {
 
         } finally {
             // We force the executor to shutdown after 10 seconds since scheduleAtFixedRate() continue to create tasks indefinitely
-            CommonUtils.wait(5000);
+            PrintUtils.wait(5000);
             ExecutorsUtils.shutdownNowExecutorAndReport(executorService, 5L);
         }
     }

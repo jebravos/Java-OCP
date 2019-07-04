@@ -1,12 +1,12 @@
 package ocp.concurrency;
 
-import ocp.utils.CommonUtils;
+import ocp.utils.PrintUtils;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
-import static ocp.utils.CommonUtils.println;
+import static ocp.utils.PrintUtils.println;
 
 class Utils {
 
@@ -40,7 +40,7 @@ class Utils {
         return () -> {
             try {
                 printLnWithThreadId("Waiting...");
-                CommonUtils.wait(timeToWaitInMillis);
+                PrintUtils.wait(timeToWaitInMillis);
                 printLnWithThreadId(TimeUnit.MILLISECONDS.toSeconds(timeToWaitInMillis) + " seconds has been passed! ");
             } catch (InterruptedException e) {
                 e.printStackTrace();

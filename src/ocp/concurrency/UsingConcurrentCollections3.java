@@ -1,12 +1,12 @@
 package ocp.concurrency;
 
-import ocp.utils.CommonUtils;
+import ocp.utils.PrintUtils;
 
 import java.util.*;
 import java.util.concurrent.*;
 
-import static ocp.utils.CommonUtils.print;
-import static ocp.utils.CommonUtils.println;
+import static ocp.utils.PrintUtils.print;
+import static ocp.utils.PrintUtils.println;
 
 public class UsingConcurrentCollections3 {
 
@@ -21,28 +21,28 @@ public class UsingConcurrentCollections3 {
     }
 
     private static void usingSimpleConcurrentCollections() {
-        CommonUtils.println("--------Using simple Concurrent Collections --------");
+        PrintUtils.println("--------Using simple Concurrent Collections --------");
         Map<String, Integer> map = new ConcurrentHashMap<>();
         map.put("zebra", 52);
         map.put("elephant", 10);
-        CommonUtils.println(map.get("elephant"));
+        PrintUtils.println(map.get("elephant"));
 
         Queue<Integer> queue = new ConcurrentLinkedQueue<>();
         queue.offer(31);
-        CommonUtils.println(queue.peek());
-        CommonUtils.println(queue.poll());
+        PrintUtils.println(queue.peek());
+        PrintUtils.println(queue.poll());
 
         Deque<Integer> deque = new ConcurrentLinkedDeque<>();
         deque.offer(10);
         deque.push(4);
-        CommonUtils.println(deque.peek());
-        CommonUtils.println(deque.pop());
-        CommonUtils.println("-----------------------------------------------------");
+        PrintUtils.println(deque.peek());
+        PrintUtils.println(deque.pop());
+        PrintUtils.println("-----------------------------------------------------");
 
     }
 
     private static void understandingBlockingQueues() {
-        CommonUtils.println("-------- Understanding Blocking Queues--------");
+        PrintUtils.println("-------- Understanding Blocking Queues--------");
         try {
 
             // A LinkedBlockingQueue maintains a linked list between the elements.
@@ -55,28 +55,28 @@ public class UsingConcurrentCollections3 {
             // returning false if time elapses before space is available.
             blockingQueue.offer(3, 4, TimeUnit.SECONDS);
 
-            CommonUtils.println(blockingQueue);
-            CommonUtils.println(blockingQueue.poll());
+            PrintUtils.println(blockingQueue);
+            PrintUtils.println(blockingQueue.poll());
             // poll(long timeout, TimeUnit unit) Retrieves and removes an item from the queue
             // waiting the specified time, returning null if the time elapses before the item is available
-            CommonUtils.println(blockingQueue.poll(10, TimeUnit.MILLISECONDS));
+            PrintUtils.println(blockingQueue.poll(10, TimeUnit.MILLISECONDS));
 
-            CommonUtils.println(blockingQueue);
+            PrintUtils.println(blockingQueue);
 
 
         } catch (InterruptedException e) {
             System.err.println(e.getMessage());
         }
-        CommonUtils.println("-----------------------------------------------------");
+        PrintUtils.println("-----------------------------------------------------");
     }
 
     private static void understandingBlockingDequeues() {
-        CommonUtils.println("-------- Understanding Blocking Dequeues--------");
+        PrintUtils.println("-------- Understanding Blocking Dequeues--------");
         // A LinkedBlockingDeque maintains a linked list between the elements.
         BlockingDeque<Integer> blockingDeque = new LinkedBlockingDeque<>();
 
 
-        CommonUtils.println(blockingDeque);
+        PrintUtils.println(blockingDeque);
         try {
             // Since a BlockingDequeu Inherits all the methods from Queue, we are able to use offer(E e) method
             blockingDeque.offer(1);
@@ -84,33 +84,33 @@ public class UsingConcurrentCollections3 {
             blockingDeque.offer(3);
             // offerFirst(E, e, long timeout, TimeUnit unit) adds item to the front of the queue waiting the specified time,
             blockingDeque.offerFirst(0, 5L, TimeUnit.SECONDS);
-            CommonUtils.println(blockingDeque);
+            PrintUtils.println(blockingDeque);
             // offerLast(E, e, long timeout, TimeUnit unit) adds item to the tail of the queue waiting the specified time,
             blockingDeque.offerLast(4, 5L, TimeUnit.SECONDS);
-            CommonUtils.println(blockingDeque);
+            PrintUtils.println(blockingDeque);
             // pollFirst(long timeout, TimeUnit unit) Retrieves and removes from the Front of the queue
             // waiting the specified time, returning null if the time elapses before the item is available
-            CommonUtils.println(blockingDeque.pollFirst(5L, TimeUnit.SECONDS));
+            PrintUtils.println(blockingDeque.pollFirst(5L, TimeUnit.SECONDS));
             // pollFirst(long timeout, TimeUnit unit) Retrieves and removes from the tail of the queue
             // waiting the specified time, returning null if the time elapses before the item is available
-            CommonUtils.println(blockingDeque.pollLast(5L, TimeUnit.SECONDS));
-            CommonUtils.println(blockingDeque);
-            CommonUtils.println("-----------------------------------------------------");
+            PrintUtils.println(blockingDeque.pollLast(5L, TimeUnit.SECONDS));
+            PrintUtils.println(blockingDeque);
+            PrintUtils.println("-----------------------------------------------------");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     private static void understandingSkipListCollections() {
-        CommonUtils.println("-------- Understanding Skip List Collections --------");
+        PrintUtils.println("-------- Understanding Skip List Collections --------");
         // Think "sorted" concurrent collections
         // Like other queue examples it's recommended that you assign these objects to interface references such as SortedMap or NavigableSet
-        CommonUtils.println("-----------------------------------------------------");
+        PrintUtils.println("-----------------------------------------------------");
 
     }
 
     private static void understandingCopyOnWriteCollections() {
-        CommonUtils.println("-------- Understanding copy on write Collections --------");
+        PrintUtils.println("-------- Understanding copy on write Collections --------");
         // CopyOnWriteArrayList
         // CopyOnWriteArraySet
         // These classes copy all of their elements to a new underlying structure anytime an element us aded, modified or removed from the collection.
@@ -126,11 +126,11 @@ public class UsingConcurrentCollections3 {
 
         // Despite adding elements to the array while iterating over it, only those elements in the collection at the time for() loop was created were accessed.
         // Alternatively, if <e had used a regular ArrayList object; a ConcurrentModificationException would have been thrown at runtime.
-        CommonUtils.println();
-        CommonUtils.println(String.valueOf(list.size()));
+        PrintUtils.println();
+        PrintUtils.println(String.valueOf(list.size()));
 
 
-        CommonUtils.println("-----------------------------------------------------");
+        PrintUtils.println("-----------------------------------------------------");
 
     }
 

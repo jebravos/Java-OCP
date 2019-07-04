@@ -1,8 +1,8 @@
 package ocp.design_patterns;
 
-import ocp.utils.CommonUtils;
+import ocp.utils.PrintUtils;
 
-import static ocp.utils.CommonUtils.println;
+import static ocp.utils.PrintUtils.println;
 
 public class UsingFactoryPattern{
 
@@ -39,7 +39,7 @@ class Tuna extends Food{
 
     @Override
     public void consumed() {
-        CommonUtils.println("Tuna eaten: " + getQuantity());
+        PrintUtils.println("Tuna eaten: " + getQuantity());
     }
 }
 

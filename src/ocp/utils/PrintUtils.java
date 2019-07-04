@@ -4,7 +4,7 @@ import java.util.Arrays;
 import static ocp.utils.StringUtils.replaceNextWildcardWithNonNullValueOnTemplate;
 import static ocp.utils.StringUtils.stringValueOrNull;
 
-public class CommonUtils {
+public class PrintUtils {
 
     public static void print(Object o){
         System.out.print(stringValueOrNull(o));

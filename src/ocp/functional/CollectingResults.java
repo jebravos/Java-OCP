@@ -1,6 +1,6 @@
 package ocp.functional;
 
-import ocp.utils.CommonUtils;
+import ocp.utils.PrintUtils;
 
 import java.util.*;
 import java.util.function.Function;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.Map.Entry.comparingByValue;
-import static ocp.utils.CommonUtils.println;
+import static ocp.utils.PrintUtils.println;
 
 public class CollectingResults {
 
@@ -37,7 +37,7 @@ public class CollectingResults {
         Stream<String> sNames3 = Stream.of(names);
         TreeSet<String> namesSet = sNames3.filter(startsWithP).collect(TreeSet::new, Set::add, Set::addAll);
         println("Collecting to a TreeSet. Names starting by P: {} should be sorted", namesSet);
-        CommonUtils.println("---------------------------------------------------");
+        PrintUtils.println("---------------------------------------------------");
     }
 
     private void collectWithGroupBy() {
@@ -54,7 +54,7 @@ public class CollectingResults {
         Stream<String> sNames3 = Stream.of(names);
         Map<Integer, Set<String>> nameLengthToNameSortedSetTreeMap = sNames3.collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.toCollection(TreeSet::new)));
         println("Collecting using gropingBy into a TreeMap grouping in a TreeSet nameLengthToNameSortedSetTreeMap, Names should be sorted:  {}", nameLengthToNameSortedSetTreeMap);
-        CommonUtils.println("---------------------------------------------------");
+        PrintUtils.println("---------------------------------------------------");
     }
 
     private void collectToAMap() {
@@ -67,7 +67,7 @@ public class CollectingResults {
                 .distinct()
                 .collect(Collectors.toMap(s -> s, String::length, (i, i2) -> i, TreeMap::new));
         println("Collecting into a TreeMap sortedNameToLengthMap: {}", sortedNameToLengthMap);
-        CommonUtils.println("---------------------------------------------------");
+        PrintUtils.println("---------------------------------------------------");
 
     }
 
@@ -87,7 +87,7 @@ public class CollectingResults {
                 .collect(Collectors.partitioningBy((String s) -> s.length() > 5, Collectors.toCollection(TreeSet::new)));
         println("Collecting using partitioningBy grouping in a TreeSet (not repeated names, sorted) nameSizeGreaterThan5Map: {}", nameSizeGreaterThan5Map3);
 
-        CommonUtils.println("---------------------------------------------------");
+        PrintUtils.println("---------------------------------------------------");
 
     }
 
@@ -111,7 +111,7 @@ public class CollectingResults {
         Stream<String> sNames5 = Stream.of(names);
         Long namesCount = sNames5.collect(Collectors.counting());
         println("Collecting counting namesCount: {}", namesCount);
-        CommonUtils.println("---------------------------------------------------");
+        PrintUtils.println("---------------------------------------------------");
 
     }
 
@@ -119,16 +119,16 @@ public class CollectingResults {
         Stream<String> sWords = Stream.of(words);
         TreeMap<String, Long> wordToWordRepetitionMap = sWords
                 .collect(Collectors.groupingBy(Function.identity(), TreeMap::new, Collectors.counting()));
-        CommonUtils.println("wordToWordRepetitionMap :" + wordToWordRepetitionMap);
+        PrintUtils.println("wordToWordRepetitionMap :" + wordToWordRepetitionMap);
         LinkedHashMap<String, Long> sortedWordToRepetitionMap = wordToWordRepetitionMap
                 .entrySet()
                 .stream()
                 .sorted(comparingByValue(Comparator.reverseOrder()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (o, o2) -> o, LinkedHashMap::new));
-        CommonUtils.println("sortedWordToRepetitionMap: " + sortedWordToRepetitionMap);
+        PrintUtils.println("sortedWordToRepetitionMap: " + sortedWordToRepetitionMap);
         sortedWordToRepetitionMap.entrySet()
                 .stream().findFirst()
                 .ifPresent(x -> println("Most repeated word: {}", x));
-        CommonUtils.println("---------------------------------------------------");
+        PrintUtils.println("---------------------------------------------------");
     }
 }

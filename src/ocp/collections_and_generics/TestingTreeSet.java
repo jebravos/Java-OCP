@@ -1,13 +1,13 @@
 package ocp.collections_and_generics;
 
-import ocp.utils.CommonUtils;
+import ocp.utils.PrintUtils;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
 
-import static ocp.utils.CommonUtils.println;
+import static ocp.utils.PrintUtils.println;
 
 public class TestingTreeSet {
 
@@ -31,7 +31,7 @@ public class TestingTreeSet {
         treeSet.add(28);
         treeSet.add(4);
 
-        CommonUtils.println(treeSet);
+        PrintUtils.println(treeSet);
 
         // NavigableSet interface which provides some interesting methods:
         // E lower(E e) Returns greatest element that is < e, or null if no such element
@@ -52,17 +52,17 @@ public class TestingTreeSet {
         try {
             treeSet.add(null);
         } catch (NullPointerException e) {
-            CommonUtils.println("TreeSet cannot contain null values. It will throw a NullPointerException");
+            PrintUtils.println("TreeSet cannot contain null values. It will throw a NullPointerException");
         }
 
         println("poll first {} treeSet: {}", treeSet.pollFirst(), treeSet);
         println("poll last {} treeSet {} ", treeSet.pollLast(), treeSet);
-        CommonUtils.println("-------------------------------------------------------------");
+        PrintUtils.println("-------------------------------------------------------------");
 
         // If we use a collection to create a new TreeSet instance, the result set will be sorted according to the natural order of its elements
         List<Integer> numbers = Arrays.asList(3, 2, 5, 1, 3, 8, 7);
         TreeSet<Integer> numberTree = new TreeSet<>(numbers);
-        CommonUtils.println(numberTree);
+        PrintUtils.println(numberTree);
 
         // Objects in a TreeSet should be comparable. They must implement Comparable or whe can define a comparator in the TreeSet constructor
         // TreeSet<Elephant> elephants = new TreeSet<>(); // This will compile but a ClassCastException is thrown in elephants.add
@@ -71,7 +71,7 @@ public class TestingTreeSet {
         elephants.add(new Elephant("alberto"));
         elephants.add(new Elephant("benito"));
 
-        CommonUtils.println(elephants);
+        PrintUtils.println(elephants);
 
 
     }

@@ -1,11 +1,11 @@
 package ocp.collections_and_generics;
 
-import ocp.utils.CommonUtils;
+import ocp.utils.PrintUtils;
 
 import java.util.ArrayDeque;
 import java.util.NoSuchElementException;
 
-import static ocp.utils.CommonUtils.println;
+import static ocp.utils.PrintUtils.println;
 
 public class TestingQueues {
 
@@ -21,12 +21,12 @@ public class TestingQueues {
         ArrayDeque<Integer> queue = new ArrayDeque<>();
         // boolean add(E e) adds elements to the back of the queue and returns true or throws an exception.
         // (back)(tail) |e|1|3|4|3|5|6|7|9| (head)
-        CommonUtils.println("add 10 " + queue.add(10));
-        CommonUtils.println("add 11 " + queue.add(11));
-        CommonUtils.println("queue: " + queue);
-        CommonUtils.println("add 15 " + queue.add(15));
-        CommonUtils.println("add 12 " + queue.add(12));
-        CommonUtils.println("queue: " + queue);
+        PrintUtils.println("add 10 " + queue.add(10));
+        PrintUtils.println("add 11 " + queue.add(11));
+        PrintUtils.println("queue: " + queue);
+        PrintUtils.println("add 15 " + queue.add(15));
+        PrintUtils.println("add 12 " + queue.add(12));
+        PrintUtils.println("queue: " + queue);
 
         //ArrayDeque doesn't allows null elements
         try{
@@ -56,13 +56,13 @@ public class TestingQueues {
         try{
             new ArrayDeque<>().remove();
         } catch (NoSuchElementException e ){
-            CommonUtils.println(e.getClass() + " applying remove() on empty queue");
+            PrintUtils.println(e.getClass() + " applying remove() on empty queue");
         }
 
 
         // void push(E e) adds an element to the front of the queue
         // Push is what makes it a double-ended queue
-        CommonUtils.println("push 0: ");
+        PrintUtils.println("push 0: ");
         queue.push(0);
         println("queue: {}", queue); // [0, 11 15 12 100]
 

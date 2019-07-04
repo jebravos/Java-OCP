@@ -1,12 +1,12 @@
 package ocp.dates;
 
-import ocp.utils.CommonUtils;
+import ocp.utils.PrintUtils;
 
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.UnsupportedTemporalTypeException;
 
-import static ocp.utils.CommonUtils.println;
+import static ocp.utils.PrintUtils.println;
 
 public class DatesNTimes {
 
@@ -20,27 +20,27 @@ public class DatesNTimes {
     }
 
     private static void creatingDatesAndTimes() {
-        CommonUtils.println(LocalDate.now());
+        PrintUtils.println(LocalDate.now());
         // DateTimeException when invalid numbers in .of()
         try {
-            CommonUtils.println(LocalDate.of(2020, Month.JANUARY, 32));
+            PrintUtils.println(LocalDate.of(2020, Month.JANUARY, 32));
         } catch (DateTimeException e) {
             System.err.println(e.getMessage());
             System.err.println(" 32 is not a valid date on January");
         }
-        CommonUtils.println("-----------------------------");
-        CommonUtils.println(LocalTime.now());
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println("-----------------------------");
+        PrintUtils.println(LocalTime.now());
+        PrintUtils.println("-----------------------------");
         //T is used to separate date from time
-        CommonUtils.println(LocalDateTime.now());
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println(LocalDateTime.now());
+        PrintUtils.println("-----------------------------");
         // Adds time zone offset (+02:00)  and time zone([Europe/Paris])
-        CommonUtils.println(ZonedDateTime.now());
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println(ZonedDateTime.now());
+        PrintUtils.println("-----------------------------");
 
-        CommonUtils.println(ZoneId.of("US/Eastern"));
-        CommonUtils.println(ZoneId.systemDefault());
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println(ZoneId.of("US/Eastern"));
+        PrintUtils.println(ZoneId.systemDefault());
+        PrintUtils.println("-----------------------------");
         // 3 ways of creating a ZonedDateTime to know for the exam:
         // public static ZonedDateTime of(int year, int month,
         //int dayOfMonth, int hour, int minute, int second, int nanos, ZoneId zone)
@@ -49,7 +49,7 @@ public class DatesNTimes {
         println("2.{}", ZonedDateTime.of(LocalDate.now(), LocalTime.now(), ZoneId.of("US/Eastern")));
         // public static ZonedDateTime of(LocalDateTime dateTime, ZoneId zone)
         println("3.{}", ZonedDateTime.of(LocalDateTime.now(), ZoneId.of("US/Eastern")));
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println("-----------------------------");
         // Getting available zone Ids
         println("Available zoneIDs: {}", ZoneId.getAvailableZoneIds());
         ZoneId.getAvailableZoneIds()
@@ -57,7 +57,7 @@ public class DatesNTimes {
                 .filter(zoneId -> zoneId.contains("America"))
                 .sorted()
                 .forEach(System.out::println);
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println("-----------------------------");
     }
 
     private static void manipulatingDAtesAndTimes() {
@@ -66,7 +66,7 @@ public class DatesNTimes {
 
         //Adding dates
         LocalDate date = LocalDate.of(2015, 1, 1);
-        CommonUtils.println(date);
+        PrintUtils.println(date);
         date = date.plusDays(1);
         println("plus one day: {}", date);
         date = date.plusWeeks(1);
@@ -81,7 +81,7 @@ public class DatesNTimes {
         // Its common to chain methods
         date = date.plusYears(1).plusMonths(2).plusDays(15);
         println("Chaining methods, plus 1 year 2 months and 15 days: {}", date);
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println("-----------------------------");
     }
 
     private static void convertingToLong() {
@@ -98,7 +98,7 @@ public class DatesNTimes {
         //seconds since January 1, 1970.
         println("LocalDateTime.of(LocalDate.now(), LocalTime.now()) epoch day, seconds since January 1, 1970: {}", zonedDateTime.toEpochSecond());
         println("ZonedDateTime.of(LocalDateTime.now(), ZoneId.systemDefault()) epoch day, seconds since January 1, 1970: {}", dateTime.toEpochSecond(ZoneOffset.UTC));
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println("-----------------------------");
 
     }
 
@@ -115,9 +115,9 @@ public class DatesNTimes {
         // 1M indicates the number of months
         // 1D indicates the number of days
         // Java omits any measure that are zero. For example P1D or P1Y or P1Y3D
-        CommonUtils.println(periodOfDays);
-        CommonUtils.println(periodOfYears);
-        CommonUtils.println(periodOfYearsMonthsAndDays);
+        PrintUtils.println(periodOfDays);
+        PrintUtils.println(periodOfYears);
+        PrintUtils.println(periodOfYearsMonthsAndDays);
 
         // Using a Period
 
@@ -132,10 +132,10 @@ public class DatesNTimes {
         try {
             time.plus(periodOfDays); //UnsupportedTemporalTypeException
         } catch (UnsupportedTemporalTypeException e) {
-            CommonUtils.println("time.plus(periodOfDays) throws an UnsupportedTemporalTypeException on LocalTime objects");
+            PrintUtils.println("time.plus(periodOfDays) throws an UnsupportedTemporalTypeException on LocalTime objects");
         }
 
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println("-----------------------------");
     }
 
     private static void workingWithDuration() {
@@ -176,18 +176,18 @@ public class DatesNTimes {
         try {
             LocalDate.now().plus(hourly);
         } catch (UnsupportedTemporalTypeException e) {
-            CommonUtils.println("UnsupportedTemporalException is thrown when Duration is used with LocalDate: Unsupported unit secods ");
+            PrintUtils.println("UnsupportedTemporalException is thrown when Duration is used with LocalDate: Unsupported unit secods ");
         }
 
-        CommonUtils.println("ChronoUnit for differences:");
+        PrintUtils.println("ChronoUnit for differences:");
         println("difference in Hours between {} and {} : {}", now, now.plus(hourly), ChronoUnit.HOURS.between(now, now.plus(hourly)));
         println("difference in minutes between {} and {} : {}", now, " and ", now.plus(hourly), ChronoUnit.MINUTES.between(now, now.plus(hourly)));
         println("difference in seconds between {} and {} : {}", now, now.plus(hourly), ChronoUnit.SECONDS.between(now, now.plus(hourly)));
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println("-----------------------------");
     }
 
     private static void workingWithInstants() {
-        CommonUtils.println("Working with Instants....");
+        PrintUtils.println("Working with Instants....");
         // Instant represents a specific moment in time in the GMT time zone
         // It could be used to run a Timer
         Instant now = Instant.now();
@@ -206,7 +206,7 @@ public class DatesNTimes {
 
         // We can do math using Instant. Instant allows you to add any unit day or smaller
         Instant nextDay = now.plus(1, ChronoUnit.DAYS);
-        CommonUtils.println("Instant math:");
+        PrintUtils.println("Instant math:");
         println("next day {}", nextDay);
         Instant nextMinute = now.plus(1, ChronoUnit.MINUTES);
         println("next day {}", nextMinute);
@@ -217,7 +217,7 @@ public class DatesNTimes {
             println("now.plus(1, ChronoUnit.MONTHS) will throw {} - {}", e.getClass(), e.getMessage());
         }
 
-        CommonUtils.println("-----------------------------");
+        PrintUtils.println("-----------------------------");
 
     }
 }
