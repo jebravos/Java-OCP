@@ -1,5 +1,6 @@
 package ocp.functional;
 
+import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -26,16 +27,24 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        Test t = new Test();
-        t.test();
-        t.test();
-        t.test();
+//        Test t = new Test();
+//        t.test();
+//        t.test();
+//        t.test();
+        t();
     }
 
     private void test() {
         List<MyObject> list = Arrays.asList(new MyObject("01", 1), null, new MyObject("01", 3), new MyObject("02", 12));
         Set<String> set = list.stream().map(MyObject::getString).filter(Objects::nonNull).collect(Collectors.toSet());
         System.out.println(set);
+    }
+
+
+    private static void t(){
+        StringWriter sw = new StringWriter();
+        sw.append("hello world");
+        System.out.println(sw.toString());
     }
 
 

@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08e89917-f348-4ff4-9537-8651b07215cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dates_strings_localization/FormatingNumbers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dates_strings_localization/i18n_l10n/I18nL10n.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dates_strings_localization/i18n_l10n/I18nL10n.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functional/CollectingResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/functional/CollectingResults.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/functional/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/functional/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/production/Java-OCP/dates_strings_localization/dates/DatesNTimes.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/production/Java-OCP/functional/CollectingResults.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/Java-OCP/functional/CollectingResults.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/production/Java-OCP/functional/Test$MyObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/Java-OCP/functional/Test$MyObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/production/Java-OCP/functional/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/production/Java-OCP/functional/Test.class" afterDir="false" />
@@ -42,83 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dates_strings_localization/i18n_l10n/I18nL10n.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/functional/CollectingResults.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/functional/Test.java">
+        <entry file="file://$PROJECT_DIR$/src/dates_strings_localization/FormatingNumbers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/time/format/DateTimeFormatter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12140">
-              <caret line="701" column="42" selection-start-line="701" selection-start-column="42" selection-end-line="701" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/util/Locale.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="529" column="31" selection-start-line="529" selection-start-column="31" selection-end-line="529" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/design_patterns/DesignPatterns.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/functional/Streams.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="30" column="98" selection-start-line="30" selection-start-column="98" selection-end-line="30" selection-end-column="98" />
+            <state relative-caret-position="242">
+              <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -157,15 +81,24 @@
         <option value="$PROJECT_DIR$/src/functional/ImplementPredicateNBiPredicate.java" />
         <option value="$PROJECT_DIR$/src/functional/ImplementingFunctionNBiFunction.java" />
         <option value="$PROJECT_DIR$/src/functional/Streams.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/dates_strings_localization/dates/DatesNTimes.java" />
         <option value="$PROJECT_DIR$/OFRA19.030BF3bis.xml" />
         <option value="$PROJECT_DIR$/OFRA19.030BF3bis.xsd" />
         <option value="$PROJECT_DIR$/src/test/MyClass.java" />
         <option value="$PROJECT_DIR$/src/test/MyClassBuilder.java" />
-        <option value="$PROJECT_DIR$/src/dates_strings_localization/i18n_l10n/I18nL10n.java" />
         <option value="$PROJECT_DIR$/src/functional/CollectingResults.java" />
         <option value="$PROJECT_DIR$/src/functional/Test.java" />
+        <option value="$PROJECT_DIR$/src/dates_strings_localization/i18n_l10n/I18nL10n.java" />
+        <option value="$PROJECT_DIR$/resources/Messages_us.properties" />
+        <option value="$PROJECT_DIR$/resources/Messages_fr.properties" />
+        <option value="$PROJECT_DIR$/resources/Messages_en_US.properties" />
+        <option value="$PROJECT_DIR$/resources/Messages_fr_FR.properties" />
+        <option value="$PROJECT_DIR$/src/JavaMessages_en_US.java" />
+        <option value="$PROJECT_DIR$/src/Messages_en_US.properties" />
+        <option value="$PROJECT_DIR$/src/Messages.properties" />
+        <option value="$PROJECT_DIR$/src/dates_strings_localization/resource_boundle/UsingResourceBundle.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/dates_strings_localization/FormatingNumbers.java" />
       </list>
     </option>
   </component>
@@ -179,8 +112,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,18 +135,14 @@
               <item name="Java-OCP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dates_strings_localization" type="462c0819:PsiDirectoryNode" />
-              <item name="i18n_l10n" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java-OCP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java-OCP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="functional" type="462c0819:PsiDirectoryNode" />
+              <item name="resource_boundle" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,16 +150,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ebr3556\Desktop\Esteban\git\Java-OCP\src" />
+      <recent name="C:\Users\ebr3556\Desktop\Esteban\git\Java-OCP\src\bundles" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="dates_strings_localization" />
     </key>
@@ -240,6 +171,8 @@
       <recent name="test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ebr3556\Desktop\Esteban\git\Java-OCP\src" />
+      <recent name="C:\Users\ebr3556\Desktop\Esteban\git\Java-OCP\resources" />
       <recent name="C:\Users\ebr3556\Desktop\Esteban\git\Java-OCP" />
     </key>
   </component>
@@ -255,23 +188,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.FormatingNumbers">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CollectingResults" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="functional.CollectingResults" />
-      <module name="Java-OCP" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="functional.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -283,6 +202,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dates_strings_localization.dates.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FormatingNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dates_strings_localization.FormatingNumbers" />
+      <module name="Java-OCP" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dates_strings_localization.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -304,8 +237,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Streams" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="functional.Streams" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="functional.Test" />
       <module name="Java-OCP" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -318,13 +251,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="functional.Test" />
+    <configuration name="UsingResourceBundle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dates_strings_localization.resource_boundle.UsingResourceBundle" />
       <module name="Java-OCP" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="functional.*" />
+          <option name="PATTERN" value="dates_strings_localization.resource_boundle.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -365,11 +298,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FormatingNumbers" />
+        <item itemvalue="Application.UsingResourceBundle" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.I18nL10n" />
         <item itemvalue="Application.DatesNTimes" />
-        <item itemvalue="Application.CollectingResults" />
-        <item itemvalue="Application.Streams" />
       </list>
     </recent_temporary>
   </component>
@@ -390,7 +323,8 @@
       <workItem from="1558452802683" duration="187000" />
       <workItem from="1558453032465" duration="3144000" />
       <workItem from="1558514966452" duration="2760000" />
-      <workItem from="1558533508846" duration="8120000" />
+      <workItem from="1558533508846" duration="21932000" />
+      <workItem from="1559678309330" duration="759000" />
     </task>
     <task id="LOCAL-00001" summary="Implementing built-in functional interfaces">
       <created>1557131495029</created>
@@ -434,16 +368,23 @@
       <option name="project" value="LOCAL" />
       <updated>1558540043453</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="I10n - L8n: Changing default locale">
+      <created>1559055394098</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559055394098</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77058000" />
+    <option name="totallyTimeSpent" value="91629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15683647" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19772118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -452,19 +393,19 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.53455573" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.16925247" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33286318" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3638928" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4203103" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.36107194" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Sequence" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.325811" />
       <window_info anchor="bottom" id="Run with VisualVM" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="14" visible="true" weight="0.5148096" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.5148096" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="15" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -521,7 +462,8 @@
     <MESSAGE value="Working with Periods" />
     <MESSAGE value="Working with Duration and Instant" />
     <MESSAGE value="I10n - L8n: Picking a Locale" />
-    <option name="LAST_COMMIT_MESSAGE" value="I10n - L8n: Picking a Locale" />
+    <MESSAGE value="I10n - L8n: Changing default locale" />
+    <option name="LAST_COMMIT_MESSAGE" value="I10n - L8n: Changing default locale" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -531,6 +473,12 @@
           <line>38</line>
           <properties />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dates_strings_localization/resource_boundle/UsingResourceBundle.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -565,71 +513,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/functional/MyFunctionalInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/functional/ImplementingFunctionalInterfaces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/functional/ImplementPredicateNBiPredicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/functional/ImplementingFunctionNBiFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/util/Optional.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="284" column="7" lean-forward="true" selection-start-line="284" selection-start-column="7" selection-end-line="284" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/functional/ImplementComsumerNBiconsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/util/Comparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-900">
-          <caret line="46" column="55" lean-forward="true" selection-start-line="46" selection-start-column="55" selection-end-line="46" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/util/stream/ReferencePipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="498" column="24" selection-start-line="498" selection-start-column="24" selection-end-line="498" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/functional/ImplementingSupplier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -765,9 +648,7 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml" />
     <entry file="file://$PROJECT_DIR$/src/dates_strings_localization/dates/DatesNTimes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4060">
@@ -786,13 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -820,22 +694,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/MyClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/production/Java-OCP/dates_strings_localization/dates/DatesNTimes.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#8180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/MyClass.java" />
+    <entry file="file://$PROJECT_DIR$/target/production/Java-OCP/dates_strings_localization/dates/DatesNTimes.class" />
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/util/Locale.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -843,21 +703,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/MyClassBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-          <folding>
-            <element signature="e#663#664#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/MyClassBuilder.java" />
     <entry file="file://$PROJECT_DIR$/src/dates_strings_localization/i18n_l10n/I18nL10n.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -883,8 +733,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/functional/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
+        <state relative-caret-position="360">
           <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Messages_fr.properties" />
+    <entry file="file://$PROJECT_DIR$/resources/Messages_fr_en_US.properties" />
+    <entry file="file://$PROJECT_DIR$/resources/Messages_en_US.properties" />
+    <entry file="file://$PROJECT_DIR$/resources/Messages_fr_FR.properties" />
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/util/ResourceBundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="405" column="24" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
+          <folding>
+            <element signature="e#15397#15398#0" expanded="true" />
+            <element signature="e#15443#15444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/util/ListResourceBundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1580">
+          <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Messages_en_US.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Messages.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="11" selection-start-line="3" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/text/MessageFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="838" column="25" selection-start-line="838" selection-start-column="25" selection-end-line="838" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dates_strings_localization/resource_boundle/UsingResourceBundle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/production/Java-OCP/functional/Test$MyObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JavaMessages_en_US.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_101/src.zip!/java/text/NumberFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2560">
+          <caret line="181" column="22" selection-start-line="181" selection-start-column="22" selection-end-line="181" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dates_strings_localization/FormatingNumbers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -10,6 +10,8 @@ import static ocp.utils.PrintUtils.println;
 
 public class DatesNTimes {
 
+    // Classes in the package java.time are thread safe
+
     public static void main(String[] args) {
         creatingDatesAndTimes();
         manipulatingDAtesAndTimes();
@@ -191,12 +193,10 @@ public class DatesNTimes {
         // Instant represents a specific moment in time in the GMT time zone
         // It could be used to run a Timer
         Instant now = Instant.now();
+        println("Instant now is {}", now);
         // ... Something time consuming
-        try {
-            Thread.sleep(Duration.ofSeconds(2).toMillis());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        PrintUtils.sleep(Duration.ofSeconds(2).toMillis());
+        //
         Instant later = Instant.now();
         println("Time difference: {} millis", ChronoUnit.MILLIS.between(now, later));
 

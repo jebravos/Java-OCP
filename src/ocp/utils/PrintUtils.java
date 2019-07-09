@@ -1,5 +1,6 @@
 package ocp.utils;
 
+import java.time.Duration;
 import java.util.Arrays;
 import static ocp.utils.StringUtils.replaceNextWildcardWithNonNullValueOnTemplate;
 import static ocp.utils.StringUtils.stringValueOrNull;
@@ -42,8 +43,13 @@ public class PrintUtils {
 
     }
 
-    public static void wait(int timeToWaitInMillis) throws InterruptedException {
-        Thread.sleep(timeToWaitInMillis);
+    //TODO move this to another class
+    public static void sleep(long timeToWaitInMillis) {
+        try {
+            Thread.sleep(timeToWaitInMillis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException("Error while sleeping", e.getCause());
+        }
     }
 
 //

@@ -50,7 +50,7 @@ public class UsingConcurrentCollections3 {
 
             // It's like a regular queue
             blockingQueue.offer(39);
-            // except that it includes methods that will wait a specific amount of time to complete an operation
+            // except that it includes methods that will sleep a specific amount of time to complete an operation
             // offer(E, e, long timeout, TimeUnit unit) adds item to the queue waiting the specified time,
             // returning false if time elapses before space is available.
             blockingQueue.offer(3, 4, TimeUnit.SECONDS);

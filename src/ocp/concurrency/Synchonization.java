@@ -53,7 +53,7 @@ abstract class SheepManager {
 class NotSynchronizedSheepManager extends SheepManager {
 
     // Multiple Threads will share this variable
-    // Any thread trying to access the sheepCount variable while an atomic operation is in rocess will hav to wait until the atomic operation on the variable is complete.
+    // Any thread trying to access the sheepCount variable while an atomic operation is in rocess will hav to sleep until the atomic operation on the variable is complete.
     private int sheepCount = 0;
 
     @Override
@@ -89,7 +89,7 @@ class SynchronizedSheepManager extends SheepManager {
     // we could synchronized the method with void incrementAndReport() { to synchronize on the object itself
     // The result will would be the same.
     void incrementAndReport() {
-        // Any Thread wanting to access to the synchronized block will  have to wait till any other thread is executing it
+        // Any Thread wanting to access to the synchronized block will  have to sleep till any other thread is executing it
         // >e could have synchronized on any object so long it was the same object
         synchronized (this) {
             System.out.println((sheepCount.incrementAndGet()) + " Sheeps");

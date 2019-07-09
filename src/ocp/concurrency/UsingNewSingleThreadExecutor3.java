@@ -52,7 +52,7 @@ public class UsingNewSingleThreadExecutor3 {
 
         // We iterate over the Future list in order to get their result
         //TODO review this implementation
-        // Search for a better way to wait to a list of futures to complete
+        // Search for a better way to sleep to a list of futures to complete
         for (Future f : futures) {
             try {
                 // get() will block the execution till it receives a response
