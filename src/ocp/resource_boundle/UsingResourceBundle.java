@@ -5,6 +5,8 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+import static ocp.utils.PrintUtils.println;
+
 public class UsingResourceBundle {
 
     public static void main(String[] args) {
@@ -20,13 +22,13 @@ public class UsingResourceBundle {
         printBundleContentForSpecificLocale("Messages", Locale.US);
         printBundleContentForSpecificLocale("Messages", Locale.FRENCH);
         printBundleContentForSpecificLocale("Messages", Locale.FRANCE);
-        System.out.println("----------------------------------------");
+        println("----------------------------------------");
         //
         ResourceBundle messages = getResourceBundleForLocale("Messages", Locale.getDefault());
-        System.out.println("For locale: " + Locale.getDefault());
-        System.out.println(messages.getString("helloWorld"));
-        System.out.println(messages.getString("onlyInDefault"));
-        System.out.println("----------------------------------------");
+        println("For locale: " + Locale.getDefault());
+        println(messages.getString("helloWorld"));
+        println(messages.getString("onlyInDefault"));
+        println("----------------------------------------");
         //
     }
 
@@ -37,26 +39,26 @@ public class UsingResourceBundle {
             .forEach(key -> systemLocaleMessages.put(key, systemLocalMessagesBundle.getString(key)));
 
 
-        System.out.println(systemLocaleMessages.getProperty("helloWorld"));
+        println(systemLocaleMessages.getProperty("helloWorld"));
         // It will be null since the property does not exist in the bundle properties object
-        System.out.println(systemLocaleMessages.getProperty("nonExistentProperty"));
+        println(systemLocaleMessages.getProperty("nonExistentProperty"));
         // We can use default values for properties that doesn't exist
-        System.out.println(systemLocaleMessages.getProperty("nonExistentProperty", "a default value"));
+        println(systemLocaleMessages.getProperty("nonExistentProperty", "a default value"));
 
-        System.out.println("----------------------------------------");
+        println("----------------------------------------");
 
     }
 
     private void usingJavaClassResourceBundle() {
         printBundleContentForSpecificLocale("JavaMessages", Locale.US);
-        System.out.println("----------------------------------------");
+        println("----------------------------------------");
     }
 
     private void usingMessageFormatter(){
         ResourceBundle rb = getResourceBundleForLocale("Messages", Locale.getDefault());
         String hello = rb.getString("helloByName");
-        System.out.println(MessageFormat.format(hello, "Esteban"));
-        System.out.println("----------------------------------------");
+        println(MessageFormat.format(hello, "Esteban"));
+        println("----------------------------------------");
 
     }
 

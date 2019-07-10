@@ -17,7 +17,7 @@ public class IOUtils {
     static void readLinesAndAcceptConsumer(BufferedReader bufferedReader, Consumer<String> lineConsumer) throws IOException {
         String line;
         while ((line = readNextLine(bufferedReader)) != null) {
-            lineConsumer.accept(line);
+            requireNonNull(lineConsumer).accept(line);
         }
     }
 
@@ -45,7 +45,7 @@ public class IOUtils {
         int b;
         while ((b = requireNonNull(inputStream).read()) != -1) {
             if (characterConsumer != null) {
-                characterConsumer.accept(b);
+                requireNonNull(characterConsumer).accept(b);
             }
         }
     }
@@ -62,9 +62,7 @@ public class IOUtils {
     }
 
     static Consumer<String> writeLine(BufferedWriter bufferedWriter) {
-        return line -> {
-            writeLine(bufferedWriter, line);
-        };
+        return line -> writeLine(bufferedWriter, line);
     }
 
     static Consumer<Integer> write(Writer writer) {

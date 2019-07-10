@@ -3,3 +3,4 @@ target
 
 #ignore IDE config
 .idea
+.DS_Store
