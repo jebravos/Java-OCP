@@ -183,7 +183,7 @@ public class DatesNTimes {
 
         PrintUtils.println("ChronoUnit for differences:");
         println("difference in Hours between {} and {} : {}", now, now.plus(hourly), ChronoUnit.HOURS.between(now, now.plus(hourly)));
-        println("difference in minutes between {} and {} : {}", now, " and ", now.plus(hourly), ChronoUnit.MINUTES.between(now, now.plus(hourly)));
+        println("difference in minutes between {} and {} : {}", now, now.plus(hourly), ChronoUnit.MINUTES.between(now, now.plus(hourly)));
         println("difference in seconds between {} and {} : {}", now, now.plus(hourly), ChronoUnit.SECONDS.between(now, now.plus(hourly)));
         PrintUtils.println("-----------------------------");
     }

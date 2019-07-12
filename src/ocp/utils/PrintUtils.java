@@ -1,6 +1,8 @@
 package ocp.utils;
 
 import java.time.Duration;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import static ocp.utils.StringUtils.replaceNextWildcardWithNonNullValueOnTemplate;
 import static ocp.utils.StringUtils.stringValueOrNull;
@@ -52,10 +54,14 @@ public class PrintUtils {
         }
     }
 
-//
-//    public static void main(String[] args) {
+
+    public static void main(String[] args) {
 //        println("Hello {} ... {} ... {}", "world", "aze", "123");
 //        println("Hello {} ... {} ... {}", "AZE");
 //        println("Hello {} ... {} ... {}", null, null, "123");
-//    }
+//        Duration hourly = Duration.ofHours(1);
+//        LocalTime now = LocalTime.now();
+//        println("difference in minutes between {} and {} : {}", now, "and" , now.plus(hourly), ChronoUnit.MINUTES.between(now, now.plus(hourly)));
+
+    }
 }

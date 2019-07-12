@@ -13,7 +13,10 @@ class StringUtils {
     static Consumer<Object> replaceNextWildcardWithNonNullValueOnTemplate(StringBuilder stringBuilder) {
         return value -> {
             if(value != null){
-                requireNonNull(stringBuilder).replace(stringBuilder.indexOf("{}"), stringBuilder.indexOf("{}") + 2, value.toString());
+                int nextWildcardIndex = stringBuilder.indexOf("{}");
+                if(nextWildcardIndex > 0){
+                    requireNonNull(stringBuilder).replace(nextWildcardIndex, nextWildcardIndex + 2, value.toString());
+                }
             }
         };
     }

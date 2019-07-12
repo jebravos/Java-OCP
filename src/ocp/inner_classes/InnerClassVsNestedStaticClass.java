@@ -12,7 +12,7 @@ public class InnerClassVsNestedStaticClass {
         // So their creation does not require an outer class instance.
         IA.IB ib = new IA.IB();
 
-        // For inner classes instantiation a instance of the outer class is required
+        // For inner classes instantiation an instance of the outer class is required
         A.C c = new A().new C();
         //  Or
         A a = new A();
