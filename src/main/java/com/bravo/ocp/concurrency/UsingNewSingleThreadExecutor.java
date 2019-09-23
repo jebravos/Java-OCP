@@ -5,6 +5,7 @@ import java.util.concurrent.*;
 
 import static com.bravo.ocp.concurrency.Utils.sayAndReturnHello;
 import static com.bravo.ocp.concurrency.Utils.sayHello;
+import static com.bravo.ocp.utils.PrintUtils.println;
 
 public class UsingNewSingleThreadExecutor {
 
@@ -27,9 +28,9 @@ public class UsingNewSingleThreadExecutor {
             //                Thread.sleep(0L);
             //            }*/
             // We prefer to call a get with timeout
-            System.out.println(future.get(1, TimeUnit.SECONDS));
+            println(future.get(1, TimeUnit.SECONDS));
         } catch (TimeoutException e) {
-            System.err.println("A timeout has occurred executing the task");
+            println("A timeout has occurred executing the task");
         } finally {
             // All executors should be shutdown
             ExecutorsUtils.shutdownExecutorAndReport(executor, 5L);

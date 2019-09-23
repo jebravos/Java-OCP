@@ -3,6 +3,8 @@ package com.bravo.ocp.concurrency;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import static com.bravo.ocp.utils.PrintUtils.println;
+
 class ExecutorsUtils {
 
 
@@ -15,7 +17,7 @@ class ExecutorsUtils {
 
     private static void awaitExecutorTerminationAndReport(ExecutorService executorService, long timeoutInSeconds) throws InterruptedException {
         if (executorService.awaitTermination(timeoutInSeconds, TimeUnit.SECONDS)) {
-            System.out.println("All tasks have been executed and executor has been successfully shut down!!!");
+            println("All tasks have been executed and executor has been successfully shut down!!!");
         }
     }
 
