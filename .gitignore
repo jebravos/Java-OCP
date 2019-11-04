@@ -2,8 +2,8 @@
 target
 
 #ignore IDE config
-.idea
+/.idea/
 .DS_Store
-
+/workspace/
 
 /.idea/workspace.xml
