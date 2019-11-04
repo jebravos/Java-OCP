@@ -1,5 +1,8 @@
 package com.bravo.ocp.functional;
 
+import static com.bravo.ocp.utils.PrintUtils.println;
+
+import com.bravo.ocp.utils.PrintUtils;
 import java.time.LocalDate;
 import java.util.function.Supplier;
 
@@ -16,8 +19,8 @@ public class ImplementingSupplier {
 
     public static void main(String[] args) {
         ImplementingSupplier is = new ImplementingSupplier();
-        System.out.println(is.dateSupplier.get());
-        System.out.println(is.stringBuilderSupplier.get().append("hola mundo"));
+        println((is.dateSupplier.get()));
+        println(is.stringBuilderSupplier.get().append("hola mundo"));
     }
 
 

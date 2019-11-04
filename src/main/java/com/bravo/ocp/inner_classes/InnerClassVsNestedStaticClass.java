@@ -39,6 +39,10 @@ class A {
         // and can also contain static members
         static int j;
 
+        static void voidMethod(){
+            println("");
+        }
+
     }
 
     // Inner class: It means a NON STATIC class defined inside a class.
