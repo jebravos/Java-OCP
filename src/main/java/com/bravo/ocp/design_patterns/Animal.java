@@ -1,7 +1,7 @@
 package com.bravo.ocp.design_patterns;
 
 // Immutable classes:
-// are classes that won't change their attribute's values after it is created.
+// are classes that won't change their attribute's values after an instance is created.
 // A read only class
 
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ final class Animal {
     }
 
     List<String> getFavouriteFood() {
-        // return favouriteFood; // Not an immutable classes. This allows external access to favoriteFooudd attribute
+        // return favouriteFood; // Not an immutable classes. This allows external access to favoriteFood attribute
         // Returning a copy of the list  will assure that no modification should affect the current state of the Animal instance
         return new ArrayList<>(this.favouriteFood);
     }

@@ -17,7 +17,9 @@ public class TestingQueues {
 
 
     private void testingQueue() {
-        //ArrayDeque is double ended queue and it stores the elements in a resizable array
+        // ArrayDeque is double ended queue and it stores the elements in a resizable array
+        // Not null elements allowed
+        // Not thread safe
         ArrayDeque<Integer> queue = new ArrayDeque<>();
         // boolean add(E e) adds elements to the back of the queue and returns true or throws an exception.
         // (back)(tail) |e|1|3|4|3|5|6|7|9| (head)

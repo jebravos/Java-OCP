@@ -1,6 +1,8 @@
 package com.bravo.ocp.functional;
 
-// Functional ocp.interfaces are thos who contains a single abstract method
+import static com.bravo.ocp.utils.PrintUtils.println;
+
+// Functional ocp.interfaces are those who contains a single abstract method
 // It can be marked with the annotation @FunctionalInterface as a good practice but it's not mandatory. If you use the annotation and the interface has more than one abstract method it won't compile.
 // They're used as basis for lambda expressions in ocp.functional programming
 @FunctionalInterface
@@ -12,7 +14,7 @@ public interface MyFunctionalInterface {
     void sayHello();
 
     // Functional ocp.interfaces may have or not default methods
-    default void sayDefaultGreting(){
-        System.out.println(DEFAULT_GREETING);
+    default void sayDefaultGreeting(){
+        println(DEFAULT_GREETING);
     }
 }

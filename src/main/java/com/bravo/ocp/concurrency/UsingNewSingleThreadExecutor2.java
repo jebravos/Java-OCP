@@ -4,6 +4,7 @@ import java.util.concurrent.*;
 
 import static com.bravo.ocp.concurrency.Utils.sayAndReturnHello;
 import static com.bravo.ocp.concurrency.Utils.sayHelloMultipleTimes;
+import static com.bravo.ocp.utils.PrintUtils.println;
 
 public class UsingNewSingleThreadExecutor2 {
 
@@ -34,7 +35,7 @@ public class UsingNewSingleThreadExecutor2 {
         //        } */
         // we use the get() method, which will waits (get blocks the execution till it has a response) till the task is executed and the value is returned.
         // An exception is thrown if the timeout is exceeded
-        System.out.println(future.get(10, TimeUnit.SECONDS));
+        println(future.get(10, TimeUnit.SECONDS));
     }
 
 }

@@ -1,5 +1,7 @@
 package com.bravo.ocp.functional;
 
+import static com.bravo.ocp.utils.PrintUtils.println;
+
 public class ImplementingFunctionalInterfaces {
 
 
@@ -9,7 +11,7 @@ public class ImplementingFunctionalInterfaces {
     }
 
     private void withLamdas(String string){
-        sayHello(()-> System.out.println("Hello from lambda!!! " + string));
+        sayHello(()-> println("Hello from lambda!!! " + string));
     }
 
     public void sayHello(MyFunctionalInterface greeter){
@@ -23,7 +25,7 @@ public class ImplementingFunctionalInterfaces {
 interface MyFunctionalGreeter extends MyFunctionalInterface{
 }
 
-// This interface is not  afunctional interface since it has two abstract methos. The one defined in MyFunctionalInterface and sayGoodBy
+// This interface is not a functional interface since it has two abstract methods. The one defined in MyFunctionalInterface and sayGoodBy
 interface MyNonFunctionalGreeter extends MyFunctionalInterface{
     void sayGoodBy(String name);
 }

@@ -15,7 +15,7 @@ public class UsingNewSingleThreadExecutor {
         try {
             // Executors factory methods to create ExecutorService instances
             // newSingleThreadExecutor() simplest way to create a thread.
-            // Only one ne thread is crated.
+            // Only one thread is created.
             // Tasks are executed in sequence.
             executor = Executors.newSingleThreadExecutor();
             // we can execute a task passing a Runnable to the execute() in the ExecutorService instance

@@ -2,6 +2,8 @@ package com.bravo.ocp.concurrency;
 
 import java.util.*;
 
+import static com.bravo.ocp.utils.PrintUtils.println;
+
 public class ObtainingSynchronizedCollections {
 
     public static void main(String[] args) {
@@ -19,7 +21,7 @@ public class ObtainingSynchronizedCollections {
         // you can wrap it using methods in the Collections class.
         List<String> synchronizedList = Collections.synchronizedList(nonSynchronizedList);
 
-        System.out.println(synchronizedList);
+        println(synchronizedList);
 
     }
 }

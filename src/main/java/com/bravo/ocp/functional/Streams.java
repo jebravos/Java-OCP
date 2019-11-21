@@ -17,6 +17,7 @@ public class Streams {
     }
 
     private void testCount() {
+        // Stream from a String array
         Stream sNames = Stream.of(names);
         println("Names has: " + sNames.count() + " elements");
         println("Empty stream has: " + Stream.empty().count() + " elements");

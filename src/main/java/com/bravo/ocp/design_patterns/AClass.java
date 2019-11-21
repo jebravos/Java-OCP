@@ -1,10 +1,12 @@
 package com.bravo.ocp.design_patterns;
 
+import static com.bravo.ocp.utils.PrintUtils.println;
+
 public abstract class AClass {
 
 
     public void notAbstractMetho(){
-        System.out.println("not abstract");
+        println("not abstract");
     }
 
     public abstract void abstractMethod();

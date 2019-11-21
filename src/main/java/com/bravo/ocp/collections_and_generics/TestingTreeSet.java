@@ -21,7 +21,7 @@ public class TestingTreeSet {
     private void testingTreeSet() {
 
         // TreeSet implements NavigableSet interface which extends from SortedSet
-        // TreeSet uses a TreeMAp to store data
+        // TreeSet uses a TreeMap to store data
         TreeSet<Integer> treeSet = new TreeSet<>();
 
         treeSet.add(1);
