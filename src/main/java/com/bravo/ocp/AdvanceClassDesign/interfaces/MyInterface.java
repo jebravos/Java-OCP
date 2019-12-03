@@ -1,4 +1,6 @@
-package com.bravo.ocp.interfaces;
+package com.bravo.ocp.AdvanceClassDesign.interfaces;
+
+import static com.bravo.ocp.utils.PrintUtils.println;
 
 //An interface is an abstract data type
 public interface MyInterface {
@@ -17,7 +19,7 @@ public interface MyInterface {
 
     // Interfaces can also have default methods, these are implicitly public
     default void sayDefaultHello(){
-        System.out.println(GREETING);
+        println(GREETING);
     }
 
 }

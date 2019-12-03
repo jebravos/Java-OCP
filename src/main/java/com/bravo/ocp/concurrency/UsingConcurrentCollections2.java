@@ -5,28 +5,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import static com.bravo.ocp.utils.PrintUtils.println;
+
 public class UsingConcurrentCollections2 {
     public static void main(String[] args) {
 //        throwingAConcurrentModificationException();
-        testLoopingAndRemoviengTheElementsOnConcurrentMap();
+        testLoopingAndRemovingTheElementsOnConcurrentMap();
     }
-
 
     // The snippet will throw a ConcurrentModificationException since the iterator key set is not properly updated after the first element is removed
     private static void throwingAConcurrentModificationException() {
         Map<String, Object> foodData = new HashMap<>();
         loopOverAMapAndTryToRemoveTheElements(foodData);
 
-
     }
 
     // Using a ConcurrentMap instead prevent the code from throwing an exception at runtime.
-    // Although we don't usually modify a loop variable this example highlights thr fact thath the ConcurrentHashMap is ordering Read/Write access such as all the class data is consistent.
+    // Although we don't usually modify a loop variable this example highlights thr fact that the ConcurrentHashMap is ordering Read/Write access such as all the class data is consistent.
     // In this code snippet, the iterator created by keySet() is updated as soon an object is removed from the Map
-    private static void testLoopingAndRemoviengTheElementsOnConcurrentMap() {
+    private static void testLoopingAndRemovingTheElementsOnConcurrentMap() {
         Map<String, Object> foodData = new ConcurrentHashMap<>();
         loopOverAMapAndTryToRemoveTheElements(foodData);
-
 
     }
 
@@ -39,10 +38,10 @@ public class UsingConcurrentCollections2 {
                 foodData.remove(key);
             }
         } catch (ConcurrentModificationException e) {
-            System.out.println("Modifying a non concurrent collection will result in a " + e.getClass() + " be thrown...");
+            println("Modifying a non concurrent collection will result in a {} be thrown...", e.getClass() );
             e.printStackTrace();
         }
 
-        System.out.println(foodData.keySet());
+        println(foodData.keySet());
     }
 }

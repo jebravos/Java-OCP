@@ -27,7 +27,7 @@ public class UsingConcurrentCollections {
 
     private static void testingConcurrentCollectionZooManager() throws InterruptedException {
 
-        feedAnimals(new ConcurentCollectionZooManager());
+        feedAnimals(new ConcurrentCollectionZooManager());
     }
 
     private static void feedAnimals(ZooManager zooManager) throws InterruptedException {
@@ -82,7 +82,7 @@ class SynchronizedZooManager extends ZooManager {
     }
 }
 
-class ConcurentCollectionZooManager extends ZooManager {
+class ConcurrentCollectionZooManager extends ZooManager {
 
     // Using concurrent collections prevents us from introducing mistakes in our own custom implementation,
     // such as if we forgot to synchronize one of the accessors methods.

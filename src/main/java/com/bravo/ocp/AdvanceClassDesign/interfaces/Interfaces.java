@@ -1,5 +1,7 @@
-package com.bravo.ocp.interfaces;
+package com.bravo.ocp.AdvanceClassDesign.interfaces;
 
+
+import static com.bravo.ocp.utils.PrintUtils.println;
 
 public class Interfaces {
     public static void main(String[] args) {
@@ -10,7 +12,7 @@ public class Interfaces {
         //
         g.sayGoodBy();
         // We have public access to Interfaces attributes since they're always public final static
-        System.out.println(MyInterface.GREETING);
+        println(MyInterface.GREETING);
     }
 }
 
@@ -21,18 +23,17 @@ class Greeter implements IGreeter{
     // Classes should overrides all abstract ocp.interfaces methods
     @Override
     public void sayHello() {
-        System.out.println("Hello from Greeter");
+        println("Hello from Greeter");
     }
 
     @Override
     public void sayGoodBy() {
-        System.out.println("Good by folks!");
+        println("Good by folks!");
     }
 
     // Classes implementing an interface may or may not override a default method
-    // Since Greeter does not overrides sayDefaultHello, it will have de default implementation
+    // Since Greeter does not overrides sayDefaultHello, it will have the default implementation
 }
-
 
 // Interfaces can extends other ocp.interfaces
 interface IGreeter extends MyInterface{

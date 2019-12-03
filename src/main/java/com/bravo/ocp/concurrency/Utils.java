@@ -19,30 +19,30 @@ class Utils {
     }
 
     static Runnable sayMessage(String message) {
-        return () -> printLnWithThreadId((message));
+        return () -> printlnWithThreadId((message));
     }
 
     static Callable<String> sayAndReturnHello() {
         return () -> {
             String hello = "Hello from callable";
-            printLnWithThreadId(hello);
+            printlnWithThreadId(hello);
             return hello;
         };
     }
 
     static Runnable sayHelloMultipleTimes(Integer timesToSayHello) {
-        return () -> IntStream.range(0, timesToSayHello).forEach(value -> printLnWithThreadId("Hello " + value));
+        return () -> IntStream.range(0, timesToSayHello).forEach(value -> printlnWithThreadId("Hello " + value));
     }
 
     static Runnable waitRunnable(int timeToWaitInMillis) {
         return () -> {
-            printLnWithThreadId("Waiting...");
+            printlnWithThreadId("Waiting...");
             PrintUtils.sleep(timeToWaitInMillis);
-            printLnWithThreadId(TimeUnit.MILLISECONDS.toSeconds(timeToWaitInMillis) + " seconds has been passed! ");
+            printlnWithThreadId(TimeUnit.MILLISECONDS.toSeconds(timeToWaitInMillis) + " seconds has been passed! ");
         };
     }
 
-    private static void printLnWithThreadId(String message) {
+    public static void printlnWithThreadId(String message) {
         PrintUtils.println("Thread {} {}", Thread.currentThread().getId(), message);
     }
 
