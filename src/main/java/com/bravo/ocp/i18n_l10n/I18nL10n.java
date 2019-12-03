@@ -1,5 +1,7 @@
 package com.bravo.ocp.i18n_l10n;
 
+import static com.bravo.ocp.utils.PrintUtils.println;
+
 import java.util.Locale;
 
 public class I18nL10n {
@@ -30,7 +32,7 @@ public class I18nL10n {
             .setLanguage("en")
             .setRegion("US")
             .build();
-        System.out.println(l1);
+        println(l1);
         // The Locale builder converts to uppercase or lowercase for you as needed, which means this is legal:
         // Locale l2 = new Locale.Builder() // bad but legal
         //     .setRegion("us")

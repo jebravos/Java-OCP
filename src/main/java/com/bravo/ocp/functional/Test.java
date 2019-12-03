@@ -11,6 +11,10 @@ import java.util.stream.Collectors;
 
 public class Test {
 
+    public Test() {
+        super();
+    }
+
     class MyObject{
         String string;
         Integer id;

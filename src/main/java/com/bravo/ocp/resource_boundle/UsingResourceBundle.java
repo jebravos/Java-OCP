@@ -14,16 +14,21 @@ public class UsingResourceBundle {
     public static void main(String[] args) {
         UsingResourceBundle urb = new UsingResourceBundle();
         urb.usingResourceBundle();
-        urb.usingProperties();
-        urb.usingJavaClassResourceBundle();
-        urb.usingMessageFormatter();
+//        urb.usingProperties();
+//        urb.usingJavaClassResourceBundle();
+//        urb.usingMessageFormatter();
     }
 
     public void usingResourceBundle() {
         printBundleContentForSpecificLocale("Messages", new Locale("en", "US"));
+        PrintUtils.println("----------------------------------------");
         printBundleContentForSpecificLocale("Messages", Locale.US);
+        PrintUtils.println("----------------------------------------");
         printBundleContentForSpecificLocale("Messages", Locale.FRENCH);
+        PrintUtils.println("----------------------------------------");
         printBundleContentForSpecificLocale("Messages", Locale.FRANCE);
+        PrintUtils.println("----------------------------------------");
+        printBundleContentForSpecificLocale("Messages", Locale.CANADA_FRENCH);
         PrintUtils.println("----------------------------------------");
         //
         ResourceBundle messages = getResourceBundleForLocale("Messages", Locale.getDefault());
@@ -73,7 +78,7 @@ public class UsingResourceBundle {
             .stream()
             // messagesBundle.getString(key)) is also valid when you don't use Java bundle resources
             .map(key -> key + " - " + messagesBundle.getObject(key))
-            .forEach(System.out::println);
+            .forEach(PrintUtils::println);
     }
 
     private ResourceBundle getResourceBundleForLocale(String bundleName, Locale locale) {

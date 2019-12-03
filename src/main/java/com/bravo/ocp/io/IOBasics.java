@@ -4,6 +4,7 @@ import com.bravo.ocp.utils.PrintUtils;
 
 import java.io.*;
 
+import static com.bravo.ocp.utils.PrintUtils.err;
 import static java.io.File.separator;
 import static com.bravo.ocp.utils.PrintUtils.println;
 
@@ -46,7 +47,7 @@ public class IOBasics {
             PrintUtils.println("----------------");
 
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            err(e.getMessage());
         }
 
     }

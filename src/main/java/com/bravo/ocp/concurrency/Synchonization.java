@@ -1,5 +1,7 @@
 package com.bravo.ocp.concurrency;
 
+import static com.bravo.ocp.utils.PrintUtils.println;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -76,7 +78,7 @@ class AtomicSheepManager extends SheepManager {
         //Not synchronized method
     void incrementAndReport() {
         // incrementAndGet() is the thread-safe atomic version of increment operator.
-        System.out.println((sheepCount.incrementAndGet()) + " Sheeps");
+        println((sheepCount.incrementAndGet()) + " Sheeps");
     }
 
 }

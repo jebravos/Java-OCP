@@ -68,7 +68,18 @@ public class ClassWithInnersClasses {
     }
 
     String methodWithAnonymousInnerClass() {
-        // Anonymous inner classes are  used to extend abstract classes or implement instances. They're useful when we have short implementations that will not be used anywhere else
+
+        // When you create an anonymous inner class from an interface, it extends directly from object
+        Runnable myRunnable = new Runnable() {
+            @Override
+            public void run() {
+                println("Hello from my inner anonymous runnable");
+            }
+        };
+
+        // Anonymous inner classes are  used to extend abstract classes or implement instances.
+        // They're useful when we have short implementations that will not be used anywhere else
+        // When you create an anonymous inner class from a class, it extends from that class
         OtherInnerClass ic = new OtherInnerClass() {
 
             @Override

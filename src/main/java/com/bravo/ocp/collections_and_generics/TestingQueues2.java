@@ -10,6 +10,7 @@ public class TestingQueues2 {
         queue.add(1);
         queue.offer(2);
         queue.add(3);
+        queue.poll();
         System.out.println(queue.element());
     }
 
