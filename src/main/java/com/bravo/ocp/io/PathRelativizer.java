@@ -33,7 +33,6 @@ public class PathRelativizer {
 
     println("5. relativize absolute path with itself: {}.relativize({}) :  {}  should return an empty path", absolutePath1, absolutePath1, relativizer.relativize(absolutePath1, absolutePath1));
 
-
   }
 
   private Path relativize(Path path1, Path path2) {

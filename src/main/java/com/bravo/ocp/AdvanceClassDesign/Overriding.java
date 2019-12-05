@@ -35,7 +35,7 @@ class SimplePrinter implements Printer{
 class FullPrinter implements Printer, SpecialPrinter{
 
 
-    // Here we HAVE TO implement void printHello because FullPrinter cannot inherit from 2 different unrelated interfaces
+    // Here we HAVE TO implement void printHello because FullPrinter cannot inherit default printHello from 2 different unrelated interfaces
     @Override
     public void printHello() {
         println("overridden hello");
