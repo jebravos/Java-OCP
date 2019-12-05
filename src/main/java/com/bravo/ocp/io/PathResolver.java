@@ -5,29 +5,33 @@ import static com.bravo.ocp.utils.PrintUtils.println;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 
 public class PathResolver {
 
   public static void main(String[] args) {
     PathResolver pathResolver = new PathResolver();
-    println( "Resolves two absolute paths {}", pathResolver.resolvePaths(Paths.get("c:\\temp\\test.txt"), Paths.get("c:\\temp\\other.txt")));
-    println( "Resolves two absolute paths {}", pathResolver.resolvePaths(Paths.get("c:\\temp\\test.txt"), Paths.get("c:\\temp2\\other.txt")));
-    println( "Resolves one absolute path with relative path {}", pathResolver.resolvePaths(Paths.get("c:\\temp\\test.txt"), Paths.get("temp\\other.txt")));
-    println( "Resolves one absolute path with relative path {}", pathResolver.resolvePaths(Paths.get("c:\\temp\\test.txt"), Paths.get("temp2\\other.txt")));
-    println( "Resolves one relative path with an absolute path {}", pathResolver.resolvePaths(Paths.get("temp\\test.txt"), Paths.get("c:\\temp\\other.txt")));
+    Path absolutePath1 = Paths.get("c:\\temp\\test.txt");
+    Path absolutePath2 = Paths.get("c:\\temp\\other.txt");
+    Path otherAbsolutePath = Paths.get("c:\\temp2\\other.txt");
+    Path relativePath1 = Paths.get("temp\\other.txt");
+    Path relativePath2 = Paths.get("temp2\\other.txt");
+
+
+    println( "Resolves two absolute paths: {} .resolve( {} ) = {}",absolutePath1, absolutePath2, pathResolver.resolvePaths(absolutePath1, absolutePath2));
+    println( "Resolves two absolute paths {} .resolve( {} ) = {}",absolutePath1, otherAbsolutePath, pathResolver.resolvePaths(absolutePath1, otherAbsolutePath));
+    println( "Resolves one absolute path with relative path {} .resolve( {} ) = {}", absolutePath1, relativePath1, pathResolver.resolvePaths(absolutePath1, relativePath1));
+    println( "Resolves one absolute path with relative path {} .resolve( {} ) = {}",absolutePath1, relativePath2, pathResolver.resolvePaths(absolutePath1, relativePath2));
+    println( "Resolves one relative path with an absolute path {} .resolve( {} ) = {}",relativePath1,absolutePath2, pathResolver.resolvePaths(relativePath1, absolutePath2));
+    println( "Resolves one relative path with a relative path {} .resolve( {} ) = {}",relativePath1,relativePath2, pathResolver.resolvePaths(relativePath1, relativePath2));
+    println( "Resolves one relative path with itself  {} .resolve( {} ) = {}", relativePath1,relativePath1, pathResolver.resolvePaths(relativePath1, relativePath1));
+    println( "Resolves one absolute path with itself  {} .resolve( {} ) = {}", absolutePath1, absolutePath1, pathResolver.resolvePaths(absolutePath1, absolutePath1));
 
     try{
-      pathResolver.resolvePaths(Paths.get("temp\\test.txt"), null);
+      pathResolver.resolvePaths(relativePath1, null);
     } catch (NullPointerException e){
-      err( "Resolves one relative path with null {}", e.toString());
+      err( "Resolves one relative path with null {} .resolve( null ) = {}", e.toString());
     }
 
-    try{
-      pathResolver.resolvePaths(null, Paths.get("temp\\test.txt"));
-    } catch (NullPointerException e){
-      err( "Resolves null with one relative path {}", e.toString());
-    }
   }
 
   public Path resolvePaths(Path path1, Path path2){
