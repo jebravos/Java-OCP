@@ -10,11 +10,11 @@ import static com.bravo.ocp.utils.PrintUtils.print;
 
 public class IOUtils {
 
-    static void readLinesAndPrintInConsole(BufferedReader bufferedReader) throws IOException {
+    public static void readLinesAndPrintInConsole(BufferedReader bufferedReader) throws IOException {
         readLinesAndAcceptConsumer(bufferedReader, printLineRead());
     }
 
-    static void readLinesAndAcceptConsumer(BufferedReader bufferedReader, Consumer<String> lineConsumer) throws IOException {
+    static void  readLinesAndAcceptConsumer(BufferedReader bufferedReader, Consumer<String> lineConsumer) throws IOException {
         String line;
         while ((line = readNextLine(bufferedReader)) != null) {
             requireNonNull(lineConsumer).accept(line);
@@ -25,22 +25,22 @@ public class IOUtils {
         return requireNonNull(bufferedReader).readLine();
     }
 
-    static void readAndPrintInConsole(Reader reader) throws IOException {
+    public static void  readAndPrintInConsole(Reader reader) throws IOException {
         readAndAcceptConsumer(reader, printCharacterRead());
     }
 
-    static void readAndPrintInConsole(InputStream inputStream) throws IOException {
+    public static void  readAndPrintInConsole(InputStream inputStream) throws IOException {
         readAndAcceptConsumer(inputStream, printCharacterRead());
     }
 
-    static void readAndAcceptConsumer(Reader reader, Consumer<Integer> characterConsumer) throws IOException {
+    public static void  readAndAcceptConsumer(Reader reader, Consumer<Integer> characterConsumer) throws IOException {
         int c;
         while ((c = requireNonNull(reader).read()) != -1) {
             characterConsumer.accept(c);
         }
     }
 
-    static void readAndAcceptConsumer(InputStream inputStream, Consumer<Integer> characterConsumer) throws IOException {
+    public static void  readAndAcceptConsumer(InputStream inputStream, Consumer<Integer> characterConsumer) throws IOException {
 
         int b;
         while ((b = requireNonNull(inputStream).read()) != -1) {
@@ -61,18 +61,18 @@ public class IOUtils {
         return PrintUtils::println;
     }
 
-    static Consumer<String> writeLine(BufferedWriter bufferedWriter) {
+    public static   Consumer<String> writeLine(BufferedWriter bufferedWriter) {
         return line -> writeLine(bufferedWriter, line);
     }
 
-    static Consumer<Integer> write(Writer writer) {
+    public static   Consumer<Integer> write(Writer writer) {
         return byteRead -> {
             char c = (char) byteRead.intValue();
             write(writer, c);
         };
     }
 
-    static void write(Writer writer, char character) {
+    public static void  write(Writer writer, char character) {
         try {
             requireNonNull(writer).write(character);
         } catch (IOException e) {
@@ -80,7 +80,7 @@ public class IOUtils {
         }
     }
 
-    static void writeLine(BufferedWriter bufferedWriter, String line) {
+    public static void  writeLine(BufferedWriter bufferedWriter, String line) {
         try {
             requireNonNull(bufferedWriter).write(line);
             bufferedWriter.newLine();

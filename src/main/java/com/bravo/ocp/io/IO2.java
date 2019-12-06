@@ -6,6 +6,7 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.Period;
 
+import static com.bravo.ocp.utils.PrintUtils.err;
 import static java.io.File.separator;
 import static com.bravo.ocp.io.IOBasics.HOME;
 import static com.bravo.ocp.utils.PrintUtils.println;
@@ -31,7 +32,7 @@ public class IO2 {
         } catch (EOFException e) {
             PrintUtils.println("read has ended!!!");
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            err(e.getMessage());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -44,7 +45,7 @@ public class IO2 {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file))) {
             objectOutputStream.writeObject(esteban);
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            err(e.getMessage());
         }
     }
 

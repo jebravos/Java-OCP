@@ -10,7 +10,7 @@ import static com.bravo.ocp.utils.PrintUtils.println;
 
 public class IOBasics {
 
-    public static String HOME = "/home/esteban";
+    public static String HOME = "home/";
 
     public static void main(String[] args) {
         // The file class is used to read information about existing files and directories, list contents of a directory and create/delete files and directories
@@ -26,7 +26,6 @@ public class IOBasics {
 
         final File fileCopy = new File(HOME + separator + "/TEST_IO/file1_copy.txt");
         final File fileCopy2 = new File(HOME + separator + "/TEST_IO/file1_copy2.txt");
-
 
 
         // Try with resources in order to auto-close the resources
