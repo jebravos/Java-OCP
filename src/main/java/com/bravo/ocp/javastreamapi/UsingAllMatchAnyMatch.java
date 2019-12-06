@@ -1,4 +1,4 @@
-package com.bravo.ocp.javastreamapi.collectors;
+package com.bravo.ocp.javastreamapi;
 
 import static com.bravo.ocp.utils.PrintUtils.println;
 import static com.bravo.ocp.utils.TestDataUtils.NAMES;
