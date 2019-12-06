@@ -1,13 +1,10 @@
 package com.bravo.ocp.collections_and_generics;
 
 import com.bravo.ocp.utils.PrintUtils;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
-
-import static com.bravo.ocp.utils.PrintUtils.println;
 
 public class TestingTreeSet {
 

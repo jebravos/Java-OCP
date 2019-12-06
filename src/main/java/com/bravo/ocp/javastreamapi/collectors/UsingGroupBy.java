@@ -25,29 +25,32 @@ public class UsingGroupBy {
 
   }
 
+  public static class Course {
+
+    final String category;
+    final String name;
+
+    public Course(String category, String name) {
+      this.category = category;
+      this.name = name;
+    }
+
+    @Override
+    public String toString() {
+      return name + " " + category;
+    }
+
+    public String getCategory() {
+      return category;
+    }
+
+    public String getName() {
+      return name;
+    }
+  }
+
+
+
 }
 
 
-class Course {
-
-  final String category;
-  final String name;
-
-  Course(String category, String name) {
-    this.category = category;
-    this.name = name;
-  }
-
-  @Override
-  public String toString() {
-    return name + " " + category;
-  }
-
-  public String getCategory() {
-    return category;
-  }
-
-  public String getName() {
-    return name;
-  }
-}
