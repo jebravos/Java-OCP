@@ -142,4 +142,5 @@ public class ClassWithInnersClasses {
     abstract class OtherInnerClass {
         abstract String sayHello();
     }
+
 }
