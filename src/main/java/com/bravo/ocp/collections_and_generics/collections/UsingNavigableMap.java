@@ -1,9 +1,8 @@
-package com.bravo.ocp.collections_and_generics;
+package com.bravo.ocp.collections_and_generics.collections;
 
 import static com.bravo.ocp.utils.PrintUtils.print;
 import static com.bravo.ocp.utils.PrintUtils.println;
 
-import com.bravo.ocp.utils.PrintUtils;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 
@@ -20,6 +19,9 @@ public class UsingNavigableMap {
     navigableMap.put(5, "e");
     navigableMap.put(6, "f");
     navigableMap.put(7, "g");
+
+    // In a map contains an entry for the specified key, the element already in the map is returned after modifying the the entry to contain the new element
+    println(navigableMap.put(7,"h"));
 
     // Since is a navigableMap, elements will be sorted by key
     printMap(navigableMap, "navigableMap");

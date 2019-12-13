@@ -23,12 +23,12 @@ public class DatesNTimes {
     // Classes in the package java.time are thread safe
 
     public static void main(String[] args) {
-//        creatingDatesAndTimes();
-//        manipulatingDatesAndTimes();
-//        convertingToLong();
-//        workingWithPeriods();
-//        workingWithDuration();
-//        workingWithInstants();
+        creatingDatesAndTimes();
+        manipulatingDatesAndTimes();
+        convertingToLong();
+        workingWithPeriods();
+        workingWithDuration();
+        workingWithInstants();
     }
 
     private static void creatingDatesAndTimes() {

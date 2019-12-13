@@ -16,6 +16,8 @@ public class UsingOptional {
 
     println("anOptional content: {}", anOptional.orElseGet(() -> "Empty..."));
     println("non empty Optional content: {}", Optional.of("hello world").orElse(""));
+    println("Optional when null content using orElse: {}", Optional.ofNullable(null).orElse("value orElse"));
+    println("Optional when null content using orElse returning null: {}", Optional.ofNullable(null).orElse(null));
 
 
   }

@@ -1,5 +1,6 @@
 package com.bravo.ocp.javastreamapi;
 
+import static com.bravo.ocp.utils.PrintUtils.print;
 import static com.bravo.ocp.utils.PrintUtils.println;
 import static com.bravo.ocp.utils.TestDataUtils.NAMES;
 import static com.bravo.ocp.utils.TestDataUtils.WORDS;
@@ -26,15 +27,22 @@ public class UsingFlatMap {
         ).forEach(PrintUtils::println);
     // or
     // strings.flatMap(ss -> ss.stream()).forEach(PrintUtils::println);
-
     println("----------------");
+
     //flat map stream of strings into a stream of characters, only the 2 first characters of each name
     Stream.of(NAMES)
         .flatMap(name -> Stream.of(name.split(""))
             .limit(2)
-        ).forEach(PrintUtils::println);
+        ).forEach(s -> print(" {} ", s));
+    println("----------------");
 
+    //
+    Stream.of(Arrays.asList(NAMES), Arrays.asList(WORDS))
+        .flatMapToInt(strings1 -> strings1
+            .stream()
+            .mapToInt(String::length)
 
+        ).forEach(i -> print(" {} ", i));
   }
 
 }

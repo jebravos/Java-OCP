@@ -10,29 +10,24 @@ public class I18nL10n {
 
         pickingALocale();
         changingDefaultLocal();
+        useBuilder();
+        nonExistentLocales();
     }
 
     private static void pickingALocale() {
-        //Oracle defines a locale as "a specific geographical, political or cultural region".
+        //Oracle defines a locale as a specific geographical, political or cultural region".
         //For the exams you will see only languages and regions
         // Users current local
         Locale locale = Locale.getDefault();
         // This output tells us that our computer is using French and is sitting in France
         // fr: Language (lowercase)
         // fr_Fr: Language-Country (lowercase_UPPERCASE)
-        System.out.println("Users current local: " + locale);
+        println("Users current local: " + locale);
 
         // You can also use a local different than the system default locale
-        System.out.println(Locale.GERMAN);
-        System.out.println(Locale.GERMANY);
+        println(Locale.GERMAN);
+        println(Locale.GERMANY);
 
-
-        // We can also use builder to create a Locale
-        Locale l1 = new Locale.Builder()
-            .setLanguage("en")
-            .setRegion("US")
-            .build();
-        println(l1);
         // The Locale builder converts to uppercase or lowercase for you as needed, which means this is legal:
         // Locale l2 = new Locale.Builder() // bad but legal
         //     .setRegion("us")
@@ -43,17 +38,34 @@ public class I18nL10n {
         Locale noLanguageLocale = new Locale.Builder().setRegion("CO").build();
         // Java will let you create Locales with invalid language and regions.
         // However it won't match the Local that you want to use and your program won't behave as expected.
-        System.out.println("No language locale: " + noLanguageLocale);
+        println("No language locale: " + noLanguageLocale);
 
-        System.out.println("-------------------------------------------------");
+        println("-------------------------------------------------");
     }
 
     private static void changingDefaultLocal() {
-        System.out.println("current default locale: " + Locale.getDefault());
+        println("current default locale: " + Locale.getDefault());
         Locale newDefaultLocal = Locale.ITALY;
         Locale.setDefault(newDefaultLocal);
-        System.out.println("new default locale: " + Locale.getDefault());
+        println("new default locale: " + Locale.getDefault());
+        println("-------------------------------------------------");
+    }
 
+    private static void useBuilder() {
+        // We can also use builder to create a Locale
+        Locale l1 = new Locale.Builder()
+            .setLanguage("en")
+            .setRegion("US")
+            .build();
+        println(l1);
+        println("-------------------------------------------------");
+    }
+
+    private static void nonExistentLocales() {
+        // We can create our own Locales defining a language an a country
+        Locale nonExistent = new Locale("inglishhh", "iunaited esteits");
+        println(nonExistent);
+        println("-------------------------------------------------");
     }
 
 }

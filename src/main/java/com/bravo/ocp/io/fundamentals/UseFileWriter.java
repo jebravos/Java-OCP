@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class UsePrintWriter {
+public class UseFileWriter {
 
   public static void main(String[] args) throws Exception {
     String fileName = "text.txt";
@@ -22,10 +22,13 @@ public class UsePrintWriter {
     println("File {} exists? {}",fileName, Files.exists(Paths.get(fileName)));
 
     fw.write("hello");
+    //A flush for actually write in the file
+    fw.flush();
+    printFileContent(fileName);
     // A new write call will append more content
     fw.write("hello!!");
 
-    // Explicit close.
+    // Explicit close. Flushes and closes the file
     // A try with resources block could be use at FileWriter fw = new FileWriter(fileName);
     fw.close();
     printFileContent(fileName);
