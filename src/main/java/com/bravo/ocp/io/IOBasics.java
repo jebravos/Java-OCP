@@ -17,6 +17,9 @@ public class IOBasics {
         // It's initialized with a String containing either an absolute or relative path to the file or directory within the file system.
 
         final File home = new File(HOME );
+
+        PrintUtils.println("{} exist? {}", HOME, home.exists());
+        home.mkdir();
         PrintUtils.println("{} exist? {}", HOME, home.exists());
         PrintUtils.println("{} is folder? {}", HOME, home.isDirectory());
 
@@ -48,6 +51,9 @@ public class IOBasics {
         } catch (IOException e) {
             err(e.getMessage());
         }
+
+        //
+        home.deleteOnExit();
 
     }
 

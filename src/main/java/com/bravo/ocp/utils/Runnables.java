@@ -1,28 +1,24 @@
-package com.bravo.ocp.concurrency;
-
-import com.bravo.ocp.utils.PrintUtils;
+package com.bravo.ocp.utils;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
-import static com.bravo.ocp.utils.PrintUtils.println;
+public class Runnables {
 
-class Utils {
-
-    static Runnable sayHello() {
+    public static Runnable sayHello() {
         return sayMessage("Hello");
     }
 
-    static Runnable sayHello(String message) {
+    public static Runnable sayHello(String message) {
         return sayMessage("Hello " + message);
     }
 
-    static Runnable sayMessage(String message) {
+    public static Runnable sayMessage(String message) {
         return () -> printlnWithThreadId((message));
     }
 
-    static Callable<String> sayAndReturnHello() {
+    public static Callable<String> sayAndReturnHello() {
         return () -> {
             String hello = "Hello from callable";
             printlnWithThreadId(hello);
@@ -30,11 +26,11 @@ class Utils {
         };
     }
 
-    static Runnable sayHelloMultipleTimes(Integer timesToSayHello) {
+    public static Runnable sayHelloMultipleTimes(Integer timesToSayHello) {
         return () -> IntStream.range(0, timesToSayHello).forEach(value -> printlnWithThreadId("Hello " + value));
     }
 
-    static Runnable waitRunnable(int timeToWaitInMillis) {
+    public static Runnable waitRunnable(int timeToWaitInMillis) {
         return () -> {
             printlnWithThreadId("Waiting...");
             PrintUtils.sleep(timeToWaitInMillis);

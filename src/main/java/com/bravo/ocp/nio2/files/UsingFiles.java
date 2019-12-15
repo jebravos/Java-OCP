@@ -1,7 +1,7 @@
 package com.bravo.ocp.nio2.files;
 
-import static com.bravo.ocp.nio2.NIO2.HOME;
-import static com.bravo.ocp.nio2.NIO2.RESOURCES;
+import static com.bravo.ocp.nio2.UsingPath.HOME;
+import static com.bravo.ocp.nio2.UsingPath.RESOURCES;
 import static com.bravo.ocp.utils.FilesUtils.copy;
 
 import java.io.IOException;

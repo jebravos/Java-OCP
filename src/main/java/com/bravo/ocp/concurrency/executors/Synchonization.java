@@ -1,7 +1,8 @@
-package com.bravo.ocp.concurrency;
+package com.bravo.ocp.concurrency.executors;
 
 import static com.bravo.ocp.utils.PrintUtils.println;
 
+import com.bravo.ocp.utils.ExecutorsUtils;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -94,7 +95,7 @@ class SynchronizedSheepManager extends SheepManager {
         // Any Thread wanting to access to the synchronized block will  have to sleep till any other thread is executing it
         // >e could have synchronized on any object so long it was the same object
         synchronized (this) {
-            System.out.println((sheepCount.incrementAndGet()) + " Sheeps");
+            println((sheepCount.incrementAndGet()) + " Sheeps");
         }
     }
 

@@ -13,6 +13,8 @@ public class Interfaces {
         g.sayGoodBy();
         // We have public access to Interfaces attributes since they're always public final static
         println(MyInterface.GREETING);
+        println(g.GREETING);
+        println(IGreeter.GREETING);
     }
 }
 
@@ -37,6 +39,8 @@ class Greeter implements IGreeter{
 
 // Interfaces can extends other ocp.interfaces
 interface IGreeter extends MyInterface{
+    String GREETING = "Hello!";
+
     void sayGoodBy();
 }
 

@@ -8,11 +8,16 @@ public class TestingInheritanceNPolimorphism {
   public static void main(String[] args) {
     C c = new C("my c");
     B b = new B();
+
+    println(c.i);
+    println(b.i);
   }
 
 }
 
 class A {
+
+  protected int i = 1;
 
   public A() {
   } // A1
@@ -33,6 +38,8 @@ class B extends A {
 }
 
 class C extends B {
+
+  int i = 20;
 
   private C() {
     super();

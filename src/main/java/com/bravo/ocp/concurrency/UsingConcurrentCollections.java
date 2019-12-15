@@ -1,5 +1,7 @@
 package com.bravo.ocp.concurrency;
 
+import com.bravo.ocp.utils.ExecutorsUtils;
+import com.bravo.ocp.utils.Runnables;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -39,9 +41,9 @@ public class UsingConcurrentCollections {
             executorService.submit(() -> zooManager.put("Bear", "Fish"));
             executorService.submit(() -> zooManager.put("Chicken", "Corn"));
             executorService.submit(() -> zooManager.put("Chicken", "CornModified"));
-            executorService.submit(Utils.sayMessage("Lion eats " + zooManager.get("Lion").toString()));
-            executorService.submit(Utils.sayMessage("Bear eats " + zooManager.get("Bear").toString()));
-            executorService.submit(Utils.sayMessage("Chicken eats " + zooManager.get("Chicken").toString()));
+            executorService.submit(Runnables.sayMessage("Lion eats " + zooManager.get("Lion").toString()));
+            executorService.submit(Runnables.sayMessage("Bear eats " + zooManager.get("Bear").toString()));
+            executorService.submit(Runnables.sayMessage("Chicken eats " + zooManager.get("Chicken").toString()));
 
         } finally {
             ExecutorsUtils.shutdownExecutorAndReport(executorService, 5);

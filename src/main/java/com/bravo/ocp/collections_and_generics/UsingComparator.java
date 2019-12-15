@@ -21,9 +21,8 @@ public class UsingComparator {
 
     Stream.of(NAMES)
         // Sort by length then by alphabetic order
-        .sorted(byLength
         // We can chain with thenComparing(Comparator)
-        .thenComparing(alphabetic))
+        .sorted(byLength.thenComparing(alphabetic))
         .forEach(PrintUtils::println);
 
     println("---------------");

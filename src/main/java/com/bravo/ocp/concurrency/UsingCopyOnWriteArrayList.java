@@ -2,6 +2,7 @@ package com.bravo.ocp.concurrency;
 
 import com.bravo.ocp.utils.PrintUtils;
 
+import com.bravo.ocp.utils.Runnables;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CyclicBarrier;
@@ -26,7 +27,7 @@ public class UsingCopyOnWriteArrayList {
         // Cyclic barrier will wait until 2 threads call await on it in order to execute the Runnable task given as parameter
         final CyclicBarrier cyclicBarrier = new CyclicBarrier(2, () -> {
             PrintUtils.println("--After threads execution--");
-            threadSafeList.forEach(Utils::printlnWithThreadId);
+            threadSafeList.forEach(Runnables::printlnWithThreadId);
             PrintUtils.println("-------------------------");
         });
 
@@ -52,7 +53,7 @@ public class UsingCopyOnWriteArrayList {
             @Override
             public void run() {
                 // List content modifications wont be reflected until the end of the execution
-                threadSafeList.forEach(Utils::printlnWithThreadId);
+                threadSafeList.forEach(Runnables::printlnWithThreadId);
                 try {
                     cyclicBarrier.await();
                 } catch (InterruptedException e) {

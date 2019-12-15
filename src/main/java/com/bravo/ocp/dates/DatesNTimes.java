@@ -16,6 +16,7 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.time.temporal.UnsupportedTemporalTypeException;
 
 public class DatesNTimes {
@@ -23,11 +24,11 @@ public class DatesNTimes {
     // Classes in the package java.time are thread safe
 
     public static void main(String[] args) {
-        creatingDatesAndTimes();
-        manipulatingDatesAndTimes();
-        convertingToLong();
-        workingWithPeriods();
-        workingWithDuration();
+//        creatingDatesAndTimes();
+//        manipulatingDatesAndTimes();
+//        convertingToLong();
+//        workingWithPeriods();
+//        workingWithDuration();
         workingWithInstants();
     }
 
@@ -205,6 +206,7 @@ public class DatesNTimes {
         // It could be used to run a Timer
         Instant now = Instant.now();
         println("Instant now is {}", now);
+        println("Instant now.truncatedTo DAYS {}", now.truncatedTo(ChronoUnit.DAYS));
         // ... Something time consuming
         sleep(Duration.ofSeconds(2).toMillis());
         //

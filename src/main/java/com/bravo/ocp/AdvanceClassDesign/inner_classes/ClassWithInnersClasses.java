@@ -1,7 +1,8 @@
-package com.bravo.ocp.inner_classes;
+package com.bravo.ocp.AdvanceClassDesign.inner_classes;
 
 
 import com.bravo.ocp.utils.PrintUtils;
+import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
 import static com.bravo.ocp.utils.PrintUtils.println;
 
@@ -11,6 +12,8 @@ public class ClassWithInnersClasses {
     private final static String staticVariable = "STATIC";
     private String hello = "hello from outer class";
     private String otherMember = "This is other outer member";
+    public String publicMember = "this is an outer public member";
+
 
     // This method contains a local inner class
     public String methodWithLocalInnerClass() {
@@ -103,13 +106,28 @@ public class ClassWithInnersClasses {
 
     // Static inner class does not need an instance of the outer class in order to be instantiated
     static class StaticMemberClass {
-        private String hello = "Hello from static inner class";
+        String hello = "Hello from static inner class";
 
         public String sayHello() {
             return hello;
         }
 
     }
+
+    // Inner anonymous class
+    StaticMemberClass smc = new StaticMemberClass(){
+        String publicMember;
+
+        public String anotherHello(){
+            return ClassWithInnersClasses.this.publicMember;
+        }
+
+        @Override
+        public String sayHello(){
+            return hello + " world";
+        }
+
+    };
 
     // The next line does not work since the  LocalInnerClass is a local inner class defined inside the methodWithLocalInnerClass method.
 //    private  LocalInnerClass lic;

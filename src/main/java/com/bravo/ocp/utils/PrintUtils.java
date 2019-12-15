@@ -3,7 +3,11 @@ package com.bravo.ocp.utils;
 import static com.bravo.ocp.utils.StringUtils.format;
 import static com.bravo.ocp.utils.StringUtils.stringValueOrNull;
 
+import java.util.function.Supplier;
+
 public class PrintUtils {
+
+
 
     public static void print(Object o) {
         System.out.print(stringValueOrNull(o));
@@ -16,6 +20,10 @@ public class PrintUtils {
 
     public static void println() {
         println("");
+    }
+
+    public static void println(Supplier<?> supplier) {
+        println(supplier.get());
     }
 
     public static void println(Object o) {

@@ -1,11 +1,17 @@
 
-package com.bravo.ocp.concurrency;
+package com.bravo.ocp.concurrency.executors;
 
-import java.util.concurrent.*;
-
-import static com.bravo.ocp.concurrency.Utils.sayAndReturnHello;
-import static com.bravo.ocp.concurrency.Utils.sayHello;
 import static com.bravo.ocp.utils.PrintUtils.println;
+import static com.bravo.ocp.utils.Runnables.sayAndReturnHello;
+
+import com.bravo.ocp.utils.ExecutorsUtils;
+import com.bravo.ocp.utils.Runnables;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class UsingNewSingleThreadExecutor {
 
@@ -19,7 +25,7 @@ public class UsingNewSingleThreadExecutor {
             // Tasks are executed in sequence.
             executor = Executors.newSingleThreadExecutor();
             // we can execute a task passing a Runnable to the execute() in the ExecutorService instance
-            executor.execute(sayHello());
+            executor.execute(Runnables.sayHello());
             // or submit a task with submit()using a Callable lambda as argument. This returns a Future<T>
             Future<String> future = executor.submit(sayAndReturnHello());
             // Wait till the task is completed

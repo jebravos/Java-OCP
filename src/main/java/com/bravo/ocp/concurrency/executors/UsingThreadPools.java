@@ -1,10 +1,11 @@
-package com.bravo.ocp.concurrency;
+package com.bravo.ocp.concurrency.executors;
 
+import static com.bravo.ocp.utils.Runnables.sayHello;
+import static com.bravo.ocp.utils.Runnables.waitRunnable;
+
+import com.bravo.ocp.utils.ExecutorsUtils;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static com.bravo.ocp.concurrency.Utils.sayHello;
-import static com.bravo.ocp.concurrency.Utils.waitRunnable;
 
 public class UsingThreadPools {
 

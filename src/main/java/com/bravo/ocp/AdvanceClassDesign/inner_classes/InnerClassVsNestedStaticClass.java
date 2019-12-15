@@ -1,4 +1,4 @@
-package com.bravo.ocp.inner_classes;
+package com.bravo.ocp.AdvanceClassDesign.inner_classes;
 
 import static com.bravo.ocp.utils.PrintUtils.println;
 

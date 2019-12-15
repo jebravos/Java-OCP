@@ -1,13 +1,16 @@
-package com.bravo.ocp.concurrency;
+package com.bravo.ocp.concurrency.executors;
 
+import com.bravo.ocp.utils.ExecutorsUtils;
 import com.bravo.ocp.utils.PrintUtils;
-
+import com.bravo.ocp.utils.Runnables;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.*;
-
-import static com.bravo.ocp.utils.PrintUtils.println;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 public class UsingNewSingleThreadExecutor3 {
 
@@ -34,7 +37,7 @@ public class UsingNewSingleThreadExecutor3 {
     private static Callable<Boolean> sayHelloMultipleTimes(Integer timesToSayHello) {
 
         return () -> {
-            Utils.sayHelloMultipleTimes(timesToSayHello).run();
+            Runnables.sayHelloMultipleTimes(timesToSayHello).run();
             return Boolean.TRUE;
         };
     }
@@ -42,7 +45,7 @@ public class UsingNewSingleThreadExecutor3 {
     private static Callable<Boolean> sayHello() {
 
         return () -> {
-            Utils.sayHello().run();
+            Runnables.sayHello().run();
             return Boolean.TRUE;
         };
     }

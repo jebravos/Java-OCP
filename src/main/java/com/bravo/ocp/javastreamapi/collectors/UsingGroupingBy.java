@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class UsingGroupBy {
+public class UsingGroupingBy {
 
 
   public static void main(String[] args) {
@@ -22,6 +22,12 @@ public class UsingGroupBy {
         // groupingBy expects a Function and returns a Collector to group elements in a Map
         .collect(Collectors.groupingBy(Course::getCategory))
         .forEach((m, n) -> println("{}", n));
+
+
+    println(courses.stream()
+        // groupingBy expects a Function and returns a Collector to group elements in a Map
+        .collect(Collectors.groupingBy(Course::getCategory, Collectors.mapping(course -> course.getName(), Collectors.toList())))
+    );
 
   }
 
